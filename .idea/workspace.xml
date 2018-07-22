@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b645826-9c16-494e-9be1-3c319d86c758" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/AnalysisResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentiment-engine/src/main/resources/sentiment.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/PhraseAnalysisRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/PhraseAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestPhraseAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment-engine/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/engine/AnalysisEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/engine/AnalysisEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/sentiment-engine/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,22 +17,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sentiment-engine/pom.xml">
+      <file leaf-file-name="TestAnalysisEngine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+            <state relative-caret-position="64">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestAnalysisEngine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-engine/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+            <state relative-caret-position="352">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhraseAnalysis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/PhraseAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#334#335#0" expanded="true" />
+                <element signature="e#369#370#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestPhraseAnalysis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestPhraseAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="AnalysisResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/AnalysisResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhraseAnalysisRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/PhraseAnalysisRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding>
+                <element signature="e#166#167#0" expanded="true" />
+                <element signature="e#202#203#0" expanded="true" />
+                <element signature="e#227#228#0" expanded="true" />
+                <element signature="e#256#257#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,43 +104,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sentiment.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/resources/sentiment.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnalysisResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/AnalysisResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StanfordCoreNLP.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/edu/stanford/nlp/stanford-corenlp/3.9.1/stanford-corenlp-3.9.1.jar!/edu/stanford/nlp/pipeline/StanfordCoreNLP.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="170" column="30" selection-start-line="170" selection-start-column="30" selection-end-line="170" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -112,6 +134,10 @@
         <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/AnalysisResult.java" />
         <option value="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java" />
         <option value="$PROJECT_DIR$/sentiment-engine/pom.xml" />
+        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/AnalysisStrategy.java" />
+        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/PhraseAnalysisRequest.java" />
+        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/PhraseAnalysis.java" />
+        <option value="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestPhraseAnalysis.java" />
       </list>
     </option>
   </component>
@@ -132,11 +158,14 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="763" />
+    <option name="y" value="-12" />
+    <option name="width" value="1280" />
+    <option name="height" value="1080" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <hideEmptyPackages ProjectPane="false" />
@@ -144,8 +173,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -238,7 +267,87 @@
               <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="strategy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="strategy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -263,6 +372,124 @@
       <recent name="D:\Development\Source\Degree\sentiment-analysis\sentiment-engine" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/compiler.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sentiment-engine/pom.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/engine/AnalysisEngine.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/AnalysisResult.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sentiment-engine/src/main/resources/sentiment.properties</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -275,7 +502,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestAnalysisEngine">
+  <component name="RunManager" selected="JUnit.TestPhraseAnalysis.testVeryPositivePhraseScenario">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -328,6 +555,75 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="TestPhraseAnalysis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sentiment-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.lbevan.sentiment.strategy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.strategy" />
+      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.strategy.TestPhraseAnalysis" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestPhraseAnalysis.testPositivePhraseScenario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sentiment-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.lbevan.sentiment.strategy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.strategy" />
+      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.strategy.TestPhraseAnalysis" />
+      <option name="METHOD_NAME" value="testPositivePhraseScenario" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestPhraseAnalysis.testVeryPositivePhraseScenario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sentiment-engine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.lbevan.sentiment.strategy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.strategy" />
+      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.strategy.TestPhraseAnalysis" />
+      <option name="METHOD_NAME" value="testVeryPositivePhraseScenario" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -369,9 +665,15 @@
     <list>
       <item itemvalue="JUnit.TestAnalysisEngine.testBasicSentimentScenario" />
       <item itemvalue="JUnit.TestAnalysisEngine" />
+      <item itemvalue="JUnit.TestPhraseAnalysis" />
+      <item itemvalue="JUnit.TestPhraseAnalysis.testPositivePhraseScenario" />
+      <item itemvalue="JUnit.TestPhraseAnalysis.testVeryPositivePhraseScenario" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestPhraseAnalysis.testVeryPositivePhraseScenario" />
+        <item itemvalue="JUnit.TestPhraseAnalysis.testPositivePhraseScenario" />
+        <item itemvalue="JUnit.TestPhraseAnalysis" />
         <item itemvalue="JUnit.TestAnalysisEngine" />
         <item itemvalue="JUnit.TestAnalysisEngine.testBasicSentimentScenario" />
       </list>
@@ -394,18 +696,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAnalysisEngine_testBasicSentimentScenario - 2018.07.20 at 09h 42m 17s.xml">
-      <configuration name="TestAnalysisEngine.testBasicSentimentScenario" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnalysisEngine - 2018.07.20 at 09h 43m 33s.xml">
-      <configuration name="TestAnalysisEngine" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnalysisEngine - 2018.07.20 at 09h 45m 03s.xml">
-      <configuration name="TestAnalysisEngine" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnalysisEngine - 2018.07.20 at 10h 10m 22s.xml">
-      <configuration name="TestAnalysisEngine" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestAnalysisEngine - 2018.07.20 at 10h 16m 28s.xml">
       <configuration name="TestAnalysisEngine" configurationId="JUnit" />
     </history-entry>
@@ -424,56 +714,143 @@
     <history-entry file="TestAnalysisEngine - 2018.07.22 at 20h 25m 28s.xml">
       <configuration name="TestAnalysisEngine" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestPhraseAnalysis - 2018.07.22 at 22h 06m 15s.xml">
+      <configuration name="TestPhraseAnalysis" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestPhraseAnalysis_testPositivePhraseScenario - 2018.07.22 at 22h 06m 47s.xml">
+      <configuration name="TestPhraseAnalysis.testPositivePhraseScenario" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestPhraseAnalysis_testVeryPositivePhraseScenario - 2018.07.22 at 22h 07m 15s.xml">
+      <configuration name="TestPhraseAnalysis.testVeryPositivePhraseScenario" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestPhraseAnalysis_testVeryPositivePhraseScenario - 2018.07.22 at 22h 07m 22s.xml">
+      <configuration name="TestPhraseAnalysis.testVeryPositivePhraseScenario" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7280000" />
+    <option name="totallyTimeSpent" value="10942000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32763532" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32478634" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17919463" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="17" weight="0.32763532" />
+      <window_info anchor="right" id="Palette&#9;" order="15" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="18" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32707354" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32942098" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Capture Tool" order="13" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12678856" />
+      <window_info anchor="right" id="Database" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4031339" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3998435" />
+      <window_info anchor="right" id="Palette" order="9" />
+      <window_info id="Designer" order="8" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="13" />
+      <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Run" order="4" visible="true" weight="0.32478634" />
+      <window_info id="Image Layers" order="9" />
+      <window_info id="Capture Tool" order="10" />
+      <window_info id="UI Designer" order="11" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4031339" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+      <window_info anchor="right" id="Database" order="12" />
+      <window_info anchor="right" id="Palette&#9;" order="13" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info id="Favorites" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Maven Projects" order="14" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.17919463" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/engine/AnalysisEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sentiment-engine/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -485,9 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="103" selection-start-line="17" selection-start-column="103" selection-end-line="17" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -531,13 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/AnalysisResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/edu/stanford/nlp/stanford-corenlp/3.9.1/stanford-corenlp-3.9.1.jar!/edu/stanford/nlp/pipeline/StanfordCoreNLP.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -545,20 +912,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java">
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/resources/sentiment.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state>
+          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/AnalysisRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+        <state relative-caret-position="32">
+          <caret line="2" selection-start-line="2" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/AnalysisStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/TweetAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -574,12 +952,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/resources/sentiment.properties">
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/TweetAnalysisRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+        <state relative-caret-position="32">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/AnalysisResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/PhraseAnalysisRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#166#167#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/PhraseAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestPhraseAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
