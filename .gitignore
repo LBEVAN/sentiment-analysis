@@ -3,3 +3,6 @@
 /.idea/libraries
 
 /sentiment-engine/target
+/.idea/uiDesigner.xml
+/.idea/encodings.xml
+/.idea/workspace.xml
