@@ -1,4 +1,4 @@
-package io.github.lbevan.sentiment.domain;
+package io.github.lbevan.twitter.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

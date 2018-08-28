@@ -1,6 +1,6 @@
-package io.github.lbevan.sentiment.service;
+package io.github.lbevan.twitter.service;
 
-import io.github.lbevan.sentiment.domain.Tweet;
+import io.github.lbevan.twitter.domain.Tweet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

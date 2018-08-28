@@ -1,14 +1,16 @@
 package io.github.lbevan.sentiment;
 
-import io.github.lbevan.sentiment.domain.Tweet;
 import io.github.lbevan.sentiment.engine.AnalysisEngine;
-import io.github.lbevan.sentiment.service.TwitterService;
+import io.github.lbevan.twitter.domain.Tweet;
+import io.github.lbevan.twitter.service.TwitterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = { "io.github.lbevan" })
 public class Application implements CommandLineRunner {
 
     @Autowired

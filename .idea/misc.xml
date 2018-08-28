@@ -4,6 +4,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/sentiment-engine/pom.xml" />
+        <option value="$PROJECT_DIR$/twitter-service/pom.xml" />
+        <option value="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/pom.xml" />
+        <option value="$PROJECT_DIR$/twitter-spring-boot-starter/pom.xml" />
       </list>
     </option>
   </component>

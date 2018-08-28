@@ -1,4 +1,4 @@
-package io.github.lbevan.sentiment.configuration;
+package io.github.lbevan.twitter.configuration;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @Configuration
 @PropertySource("classpath:twitter.properties")
-public class TwitterConfiguration {
+public class TwitterAutoConfiguration {
 
     @Value("${token.uri}")
     private String tokenUri;

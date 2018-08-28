@@ -7,10 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="sentiment-engine" />
+        <module name="twitter-service" />
+        <module name="twitter-spring-boot-autoconfigure" />
+        <module name="twitter-spring-boot-starter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="sentiment-engine" target="1.8" />
+      <module name="twitter-service" target="1.8" />
+      <module name="twitter-spring-boot-autoconfigure" target="1.8" />
+      <module name="twitter-spring-boot-starter" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
