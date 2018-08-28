@@ -6,3 +6,7 @@
 /.idea/uiDesigner.xml
 /.idea/encodings.xml
 /.idea/workspace.xml
+
+/twitter-service/target
+/twitter-spring-boot-autoconfigure/target
+/twitter-spring-boot-starter/target
