@@ -1,7 +1,7 @@
 package io.github.lbevan.sentiment.pipeline;
 
-import io.github.lbevan.sentiment.domain.request.PhraseAnalysisRequest;
-import io.github.lbevan.sentiment.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.request.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
 import io.github.lbevan.sentiment.pipeline.adapter.PhrasePipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.adapter.PipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.AnalysisPipe;

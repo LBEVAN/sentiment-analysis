@@ -1,6 +1,6 @@
 package io.github.lbevan.sentiment.pipeline;
 
-import io.github.lbevan.sentiment.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

@@ -1,7 +1,7 @@
 package io.github.lbevan.sentiment.engine;
 
-import io.github.lbevan.sentiment.domain.result.AnalysisResult;
-import io.github.lbevan.sentiment.domain.result.Sentiment;
+import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.result.Sentiment;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

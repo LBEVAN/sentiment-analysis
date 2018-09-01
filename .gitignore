@@ -1,8 +1,5 @@
 *.iml
-
 /.idea/libraries
-
-/sentiment-engine/target
 /.idea/uiDesigner.xml
 /.idea/encodings.xml
 /.idea/workspace.xml
@@ -10,3 +7,8 @@
 /twitter-service/target
 /twitter-spring-boot-autoconfigure/target
 /twitter-spring-boot-starter/target
+/sentiment-domain/target
+/sentiment-engine/target
+/sentiment-service/target
+
+/sentiment-web/node_modules

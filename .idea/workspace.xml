@@ -2,48 +2,106 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b645826-9c16-494e-9be1-3c319d86c758" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/src/main/resources/twitter.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/target/classes/io/github/lbevan/twitter/domain/Tweet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/target/classes/io/github/lbevan/twitter/service/TwitterService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/target/classes/twitter.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-service/target/twitter-service-0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/target/classes/META-INF/spring.factories" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/target/classes/io/github/lbevan/twitter/configuration/TwitterAutoConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/target/twitter-spring-boot-autoconfigure-0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-starter/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-starter/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/twitter-spring-boot-starter/target/twitter-spring-boot-starter-0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-domain/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/sentiment/service/domain/dto/AnalysisRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/sentiment/service/domain/dto/PhraseAnalysisRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/sentiment/service/domain/dto/TweetAnalysisRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/SentimentServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/Util/UUIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/configuration/JacksonConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/AnalysisType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/SimpleAnalysisApiRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/AnalysisRequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/PhraseAnalysisRequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/TweetAnalysisRequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/service/impl/TestPhraseAnalysisRequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/service/impl/TestTweetAnalysisRequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/.postcssrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/build/check-versions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/build/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/build/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/build/vue-loader.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/build/webpack.base.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/build/webpack.dev.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/build/webpack.prod.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/config/dev.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/config/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/config/prod.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/config/test.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/components/ButtonToggleGroup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/components/CreateAnalysisRequest.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/components/PhraseAnalysisRequestInput.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/components/TweetAnalysisRequestInput.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/components/ViewAnalysisRequest.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/static/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/test/e2e/custom-assertions/elementCount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/test/e2e/nightwatch.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/test/e2e/runner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/test/e2e/specs/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/test/unit/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/test/unit/jest.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/test/unit/setup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sentiment-web/test/unit/specs/HelloWorld.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sentiment-engine/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/configuration/TwitterConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/src/main/java/io/github/lbevan/twitter/configuration/TwitterAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/Tweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/domain/Tweet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/SentimentEngineApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/AnalysisRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/request/AnalysisRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/PhraseAnalysisRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/request/PhraseAnalysisRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/TweetAnalysisRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/request/TweetAnalysisRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/AnalysisResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/result/AnalysisResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/Sentence.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/result/Sentence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/SentenceDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/result/SentenceDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/Sentiment.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/result/Sentiment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/engine/AnalysisEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/engine/AnalysisEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/Payload.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/Payload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/Pipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/Pipeline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/PhrasePipelineAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/PhrasePipelineAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/TweetPipelineAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/TweetPipelineAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/TwitterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/TwitterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/resources/twitter.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/pipe/AnalysisPipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/pipe/AnalysisPipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/AnalysisRequestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/AnalysisRequestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/PhraseAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/PhraseAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/TweetAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/TweetAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/TestPipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/TestPipeline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/adapter/TestPhrasePipelineAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/adapter/TestPhrasePipelineAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/adapter/TestTweetPipelineAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/adapter/TestTweetPipelineAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestPhraseAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestPhraseAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestTweetAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestTweetAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/domain/Tweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/domain/Tweet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/TwitterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/impl/TwitterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter-service/src/main/resources/twitter.properties" beforeDir="false" afterPath="$PROJECT_DIR$/twitter-service/src/main/resources/twitter.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/sentiment-engine/target/" />
     <ignored path="$PROJECT_DIR$/twitter-service/target/" />
     <ignored path="$PROJECT_DIR$/spring-boot-starter-twitter-service/target/" />
     <ignored path="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/target/" />
     <ignored path="$PROJECT_DIR$/twitter-spring-boot-starter/target/" />
+    <ignored path="$PROJECT_DIR$/sentiment-web/target/" />
+    <ignored path="$PROJECT_DIR$/sentiment-service/target/" />
+    <ignored path="$PROJECT_DIR$/sentiment-domain/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,61 +111,125 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/twitter-spring-boot-starter/pom.xml">
+      <file leaf-file-name="PhraseAnalysisRequestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/PhraseAnalysisRequestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
-              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="202">
+              <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="31" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twitter.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/twitter-service/src/main/resources/twitter.properties">
+      <file leaf-file-name="SentimentServiceApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/SentimentServiceApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            <state relative-caret-position="128">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="UUIDGenerator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/Util/UUIDGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="192">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+              <folding>
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#273#274#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sentiment-engine/pom.xml">
+      <file leaf-file-name="TweetAnalysisRequestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/TweetAnalysisRequestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="83" column="7" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+            <state relative-caret-position="154">
+              <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twitter-service.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/twitter-service/twitter-service.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/twitter-service/pom.xml">
+      <file leaf-file-name="JacksonConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/configuration/JacksonConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+            <state relative-caret-position="288">
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/twitter-spring-boot-autoconfigure/pom.xml">
+      <file leaf-file-name="SimpleAnalysisApiRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/SimpleAnalysisApiRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+            <state relative-caret-position="80">
+              <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalysisRequestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/AnalysisRequestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="29" column="7" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="29" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalysisType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/AnalysisType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+              <folding>
+                <element signature="e#785#786#0" expanded="true" />
+                <element signature="e#812#813#0" expanded="true" />
+                <element signature="e#908#909#0" expanded="true" />
+                <element signature="e#935#936#0" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#1070#1071#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestPhraseAnalysisRequestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/service/impl/TestPhraseAnalysisRequestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestTweetAnalysisRequestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/service/impl/TestTweetAnalysisRequestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -117,8 +239,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -130,9 +252,23 @@
       <find>TwitterCon</find>
       <find>Configuration</find>
       <find>twitterRestTemplate</find>
+      <find>SpringEx</find>
+      <find>faster</find>
+      <find>mq</find>
+      <find>HelloWorld</find>
+      <find>ENUM</find>
+      <find>inputSelected</find>
+      <find>vue-toggle</find>
+      <find>force</find>
+      <find>info</find>
+      <find>lint</find>
+      <find>;</find>
+      <find>chosenOption</find>
+      <find>currentComponent</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>button-toggle-group</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Development\Source\Degree\sentiment-analysis\sentiment-engine\src\main\java\io\github\lbevan\sentiment\domain</dir>
@@ -153,57 +289,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/PhraseAdapter.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/TweetPipelineAdapter.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/PhrasePipelineAdapter.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/endpoint/AnalysisRequestListener.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/endpoint/TweetAnalysis.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/extractor/PipelineExtractor.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/extractor/PhrasePipelineExtractor.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/AnalysisPipe.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/SentimentScore.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/ResultsCollector.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/PhrasePipelineAdapter.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/AnalysisRequest.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/PhraseAnalysisRequest.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/configuration/TwitterConfiguration.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/AnalysisRequestListener.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/PhraseAnalysis.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestPhraseAnalysis.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/TestPipeline.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/TweetAnalysis.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/TwitterService.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/SpringBeanUtil.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/PipelineAdapter.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/Pipeline.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/TweetAnalysisRequest.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/AnalysisResult.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/Sentiment.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/Tweet.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/Sentence.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/SentenceDeserializer.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/engine/AnalysisEngine.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/pipe/Pipe.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/pipe/AnalysisPipe.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/Payload.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/adapter/TestPhrasePipelineAdapter.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/resources/twitter.properties" />
-        <option value="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/TwitterService.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/TweetPipelineAdapter.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/adapter/TestTweetPipelineAdapter.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestTweetAnalysis.java" />
-        <option value="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/configuration/TwitterConfiguration.java" />
-        <option value="$PROJECT_DIR$/twitter-service/src/main/resources/META-INF/spring.factories" />
-        <option value="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories" />
-        <option value="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/src/main/java/io/github/lbevan/twitter/configuration/TwitterAutoConfiguration.java" />
-        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/Application.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/sentiment-engine/pom.xml" />
-        <option value="$PROJECT_DIR$/twitter-service/pom.xml" />
-        <option value="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/pom.xml" />
         <option value="$PROJECT_DIR$/twitter-spring-boot-starter/pom.xml" />
         <option value="$PROJECT_DIR$/twitter-service/src/main/resources/twitter.properties" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/main.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/sentiment-web/pom.xml" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/components/HelloWorld.vue" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/controller/SentimentAnalysisController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/Application.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/configuration/JacksonConfiguration.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/domain/SentimentRequest.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/controller/TestSentimentRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/test/RequestHandler.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/configuration/RequestHandlerConfiguration.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/test/PhraseRequestHandler.java" />
+        <option value="$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/SentimentEngineApplication.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/router/index.js" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/domain/AnalysisType.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/test/UUIDGenerator.java" />
+        <option value="$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/domain/dto/PhraseAnalysisRequest.java" />
+        <option value="$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/domain/dto/AnalysisRequest.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/pom.xml" />
+        <option value="$PROJECT_DIR$/sentiment-engine/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/sentiment-domain/pom.xml" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/controller/SentimentRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/controller/AnalysisRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/controller/PhraseAnalysisRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/controller/TweetAnalysisRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/domain/TweetAnalysisRequest.java" />
+        <option value="$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/sentiment/TweetAnalysisRequest.java" />
+        <option value="$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/sentiment/domain/dto/PhraseAnalysisRequest.java" />
+        <option value="$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/impl/TwitterService.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/TweetAnalysisApiRequest.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/SimpleAnalysisApiRequest.java" />
+        <option value="$PROJECT_DIR$/sentiment-web/.eslintrc.js" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/components/ButtonToggleGroup.vue" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/components/TwitterTweetAnalysisRequestInput.vue" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/components/CreateAnalysisRequest.vue" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/components/PhraseAnalysisRequestInput.vue" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/api.js" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/components/TweetAnalysisRequestInput.vue" />
+        <option value="$PROJECT_DIR$/sentiment-web/src/App.vue" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/configuration/JacksonConfiguration.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/AnalysisType.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/service/impl/TestPhraseAnalysisRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/service/impl/TestTweetAnalysisRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/AnalysisRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/PhraseAnalysisRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/TweetAnalysisRequestController.java" />
+        <option value="$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/Util/UUIDGenerator.java" />
       </list>
     </option>
   </component>
@@ -258,13 +394,19 @@
       <select />
     </treeState>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/sentiment-web/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/sentiment-web/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="427" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -273,31 +415,202 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sentiment-engine" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twitter-service" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twitter-spring-boot-autoconfigure" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="twitter-spring-boot-starter" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sentiment-analysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sentiment-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="lbevan" type="462c0819:PsiDirectoryNode" />
+              <item name="sentiment" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -313,20 +626,28 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../Data/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="io.github.lbevan.sentiment.strategy" />
-      <recent name="io.github.lbevan.sentiment" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Development\Source\Degree\sentiment-analysis\twitter-spring-boot-autoconfigure\src\main\resources" />
       <recent name="D:\Development\Source\Degree\sentiment-analysis\twitter-service\src\main\resources" />
       <recent name="D:\Development\Source\Degree\sentiment-analysis\sentiment-engine\src\main\java\io\github\lbevan\sentiment\pipeline\adapter" />
       <recent name="D:\Development\Source\Degree\sentiment-analysis\sentiment-engine\src\main\resources" />
       <recent name="D:\Development\Source\Degree\sentiment-analysis\sentiment-engine" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.github.lbevan.sentiment.strategy" />
+      <recent name="io.github.lbevan.sentiment" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.github.lbevan.sentiment.service.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Development\Source\Degree\sentiment-analysis\sentiment-domain\src\main\java\io\github\lbevan\domain\dto" />
+      <recent name="D:\Development\Source\Degree\sentiment-analysis\sentiment-web\src\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -341,21 +662,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="JUnit.TestTweetAnalysisRequestController">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="All in sentiment-engine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sentiment-engine" />
+    <configuration name="TestPhraseAnalysisRequestController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sentiment-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.lbevan.sentiment.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
+      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.service.impl.TestPhraseAnalysisRequestController" />
       <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -365,19 +692,42 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestPhraseAnalysis.whenRequestReceived_ThenRequestIsProcessedAndResultReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sentiment-engine" />
+    <configuration name="TestSentimentRequestController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sentiment-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.lbevan.sentiment.strategy.*" />
+          <option name="PATTERN" value="io.github.lbevan.sentiment.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.strategy" />
-      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.strategy.TestPhraseAnalysis" />
-      <option name="METHOD_NAME" value="whenRequestReceived_ThenRequestIsProcessedAndResultReturned" />
+      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.controller" />
+      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.controller.TestSentimentRequestController" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sentiment-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.lbevan.sentiment.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.controller" />
+      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.controller.TestSentimentRequestController" />
+      <option name="METHOD_NAME" value="whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -388,64 +738,18 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TestPhrasePipelineAdapter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sentiment-engine" />
+    <configuration name="TestTweetAnalysisRequestController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sentiment-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.github.lbevan.sentiment.pipeline.adapter.*" />
+          <option name="PATTERN" value="io.github.lbevan.sentiment.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.pipeline.adapter" />
-      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.pipeline.adapter.TestPhrasePipelineAdapter" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TestTweetAnalysis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sentiment-engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.lbevan.sentiment.strategy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.strategy" />
-      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.strategy.TestTweetAnalysis" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="TestTweetPipelineAdapter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sentiment-engine" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.github.lbevan.sentiment.pipeline.adapter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.pipeline.adapter" />
-      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.pipeline.adapter.TestTweetPipelineAdapter" />
+      <option name="PACKAGE_NAME" value="io.github.lbevan.sentiment.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="io.github.lbevan.sentiment.service.impl.TestTweetAnalysisRequestController" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -526,7 +830,17 @@
     </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sentiment-engine" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.lbevan.sentiment.Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.lbevan.sentiment.SentimentEngineApplication" />
+    </configuration>
+    <configuration name="SentimentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sentiment-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.lbevan.sentiment.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.lbevan.sentiment.service.SentimentServiceApplication" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -554,19 +868,19 @@
       <item itemvalue="Maven.Unnamed" />
       <item itemvalue="Maven.Build master" />
       <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="JUnit.All in sentiment-engine" />
-      <item itemvalue="JUnit.TestPhraseAnalysis.whenRequestReceived_ThenRequestIsProcessedAndResultReturned" />
-      <item itemvalue="JUnit.TestTweetAnalysis" />
-      <item itemvalue="JUnit.TestTweetPipelineAdapter" />
-      <item itemvalue="JUnit.TestPhrasePipelineAdapter" />
+      <item itemvalue="Spring Boot.SentimentServiceApplication" />
+      <item itemvalue="JUnit.TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" />
+      <item itemvalue="JUnit.TestSentimentRequestController" />
+      <item itemvalue="JUnit.TestPhraseAnalysisRequestController" />
+      <item itemvalue="JUnit.TestTweetAnalysisRequestController" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in sentiment-engine" />
-        <item itemvalue="JUnit.TestPhrasePipelineAdapter" />
-        <item itemvalue="JUnit.TestTweetPipelineAdapter" />
-        <item itemvalue="JUnit.TestTweetAnalysis" />
-        <item itemvalue="JUnit.TestPhraseAnalysis.whenRequestReceived_ThenRequestIsProcessedAndResultReturned" />
+        <item itemvalue="JUnit.TestTweetAnalysisRequestController" />
+        <item itemvalue="JUnit.TestPhraseAnalysisRequestController" />
+        <item itemvalue="JUnit.TestSentimentRequestController" />
+        <item itemvalue="Spring Boot.SentimentServiceApplication" />
+        <item itemvalue="JUnit.TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" />
       </list>
     </recent_temporary>
   </component>
@@ -585,7 +899,11 @@
       <workItem from="1532287326033" duration="430000" />
       <workItem from="1532594092340" duration="13658000" />
       <workItem from="1532956156337" duration="34565000" />
-      <workItem from="1535051433783" duration="29536000" />
+      <workItem from="1535051433783" duration="35478000" />
+      <workItem from="1535463665964" duration="24861000" />
+      <workItem from="1535557477384" duration="22481000" />
+      <workItem from="1535641721109" duration="15082000" />
+      <workItem from="1535828341567" duration="3429000" />
     </task>
     <task id="LOCAL-00001" summary="Tweet Analysis PoC&#10;&#10;* Phrase analysis.">
       <created>1532294278965</created>
@@ -598,39 +916,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestTweetAnalysis - 2018.08.27 at 22h 50m 26s.xml">
-      <configuration name="TestTweetAnalysis" configurationId="JUnit" />
+    <history-entry file="TestSentimentRequestController_whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response - 2018.08.29 at 15h 14m 30s.xml">
+      <configuration name="TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTweetAnalysis - 2018.08.27 at 22h 51m 47s.xml">
-      <configuration name="TestTweetAnalysis" configurationId="JUnit" />
+    <history-entry file="TestSentimentRequestController_whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response - 2018.08.29 at 15h 14m 38s.xml">
+      <configuration name="TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTweetAnalysis - 2018.08.27 at 22h 52m 01s.xml">
-      <configuration name="TestTweetAnalysis" configurationId="JUnit" />
+    <history-entry file="TestSentimentRequestController_whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response - 2018.08.29 at 15h 15m 51s.xml">
+      <configuration name="TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTweetAnalysis - 2018.08.27 at 22h 56m 36s.xml">
-      <configuration name="TestTweetAnalysis" configurationId="JUnit" />
+    <history-entry file="TestSentimentRequestController_whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response - 2018.08.29 at 15h 15m 59s.xml">
+      <configuration name="TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTweetAnalysis - 2018.08.27 at 22h 57m 09s.xml">
-      <configuration name="TestTweetAnalysis" configurationId="JUnit" />
+    <history-entry file="TestSentimentRequestController_whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response - 2018.08.29 at 15h 16m 23s.xml">
+      <configuration name="TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTweetAnalysis - 2018.08.27 at 22h 57m 51s.xml">
-      <configuration name="TestTweetAnalysis" configurationId="JUnit" />
+    <history-entry file="TestSentimentRequestController_whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response - 2018.08.29 at 15h 36m 31s.xml">
+      <configuration name="TestSentimentRequestController.whenSendingJsonRequestToRequestEndpoint_thenReturnHttp200Response" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTweetAnalysis - 2018.08.27 at 22h 58m 14s.xml">
-      <configuration name="TestTweetAnalysis" configurationId="JUnit" />
+    <history-entry file="TestSentimentRequestController - 2018.09.01 at 20h 50m 21s.xml">
+      <configuration name="TestSentimentRequestController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestTweetPipelineAdapter - 2018.08.27 at 23h 47m 24s.xml">
-      <configuration name="TestTweetPipelineAdapter" configurationId="JUnit" />
+    <history-entry file="TestSentimentRequestController - 2018.09.01 at 20h 50m 37s.xml">
+      <configuration name="TestSentimentRequestController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestPhrasePipelineAdapter - 2018.08.27 at 23h 50m 12s.xml">
-      <configuration name="TestPhrasePipelineAdapter" configurationId="JUnit" />
+    <history-entry file="TestPhraseAnalysisRequestController - 2018.09.01 at 20h 53m 54s.xml">
+      <configuration name="TestPhraseAnalysisRequestController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_sentiment-engine - 2018.08.27 at 23h 50m 30s.xml">
-      <configuration name="All in sentiment-engine" configurationId="JUnit" />
+    <history-entry file="TestTweetAnalysisRequestController - 2018.09.01 at 20h 54m 30s.xml">
+      <configuration name="TestTweetAnalysisRequestController" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108789000" />
+    <option name="totallyTimeSpent" value="180584000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -642,12 +960,11 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="5" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info id="UI Designer" order="6" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2934473" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2977208" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32763532" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -655,10 +972,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27920228" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26638177" />
       <window_info anchor="bottom" id="Spring" order="13" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32905984" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28120807" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23758389" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.3295302" />
       <window_info id="Web" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
@@ -666,43 +983,11 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Message" order="0" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="5" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2022792" />
-      <window_info anchor="bottom" id="Spring" order="13" />
-      <window_info id="Image Layers" order="4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
-      <window_info id="UI Designer" order="6" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32763532" />
-      <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
-      <window_info anchor="bottom" id="Java Enterprise" order="5" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="right" id="Maven Projects" order="9" weight="0.3295302" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34295303" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Web" order="1" side_tool="true" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2934473" />
-      <window_info anchor="right" id="Bean Validation" order="3" weight="0.3295302" />
-    </layout-to-restore>
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -749,10 +1034,26 @@
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/PhraseAnalysisRequestController.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/TweetAnalysisRequestController.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="40" />
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="response.body" />
+        <watch expression="URLEncoder.encode(&quot;9fb70108-6384-458d-bef3-0971c78ea9cf&quot;, &quot;enc&quot;);" language="JAVA" custom="java.net.URLEncoder" />
+      </configuration>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="sentence" />
       </configuration>
@@ -764,6 +1065,12 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>URLEncoder.encode(&quot;9fb70108-6384-458d-bef3-0971c78ea9cf&quot;, &quot;enc&quot;);</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>java.net.URLEncoder</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Math.round(score);</expression-string>
         <language-id>JAVA</language-id>
@@ -809,457 +1116,364 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>((LabeledScoredTreeNode) tree.getChildrenAsList().get(0).getLeaves().get(0)).score()</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>edu.stanford.nlp.trees.LabeledScoredTreeNode</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar!/org/codehaus/jackson/JsonNode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Deque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="332" column="6" selection-start-line="332" selection-start-column="6" selection-end-line="332" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="666" column="22" selection-start-line="666" selection-start-column="22" selection-end-line="666" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar!/org/apache/commons/math3/util/Precision.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1041">
-          <caret line="160" column="24" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
-          <folding>
-            <element signature="e#5785#5786#0" expanded="true" />
-            <element signature="e#5826#5827#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="120" column="8" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/ResultsCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/extractor/PipelineExtractor.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.6/jackson-databind-2.9.6.jar!/com/fasterxml/jackson/databind/DeserializationFeature.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/extractor/PhrasePipelineExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.7.RELEASE/spring-beans-5.0.7.RELEASE.jar!/org/springframework/beans/factory/BeanFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/sentiment-engine.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestPhraseAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/TweetAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/PhraseAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="19" selection-start-line="19" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/strategy/AnalysisRequestListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/PhraseAnalysisRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/AnalysisResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/AnalysisRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/Sentiment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-          <folding>
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/SentenceDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/request/TweetAnalysisRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/engine/AnalysisEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-723">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1217#1218#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/PipelineAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/pipe/AnalysisPipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/Payload.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#971#972#0" expanded="true" />
-            <element signature="e#1006#1007#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/Pipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-709">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/SpringBeanUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/engine/TestAnalysisEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="18" selection-start-line="13" selection-end-line="20" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/TestPipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1072">
-          <caret line="77" column="20" lean-forward="true" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/PhrasePipelineAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="31" column="32" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="31" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/adapter/TestPhrasePipelineAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/pipe/Pipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/resources/sentiment.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" selection-start-column="36" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/controller/SentimentOptionsController.java" />
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/controller/SentimentAnalysisController.java" />
     <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/strategy/TestTweetAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
+        <state relative-caret-position="377">
           <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-boot-starter-twitter-service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/pipeline/adapter/TweetPipelineAdapter.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/2.0.3.RELEASE/spring-boot-test-2.0.3.RELEASE.jar!/org/springframework/boot/test/web/client/TestRestTemplate.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/test/java/io/github/lbevan/sentiment/pipeline/adapter/TestTweetPipelineAdapter.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/UUID.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1872">
+          <caret line="140" column="23" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/domain/Tweet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-spring-boot-autoconfigure/src/main/resources/META-INF/spring.factories">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="63" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/TwitterService.java">
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/components/HelloWorld.vue" />
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/domain/result/Sentence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.7.RELEASE/spring-context-5.0.7.RELEASE.jar!/org/springframework/context/annotation/ComponentScan.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/Application.java">
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-spring-boot-autoconfigure/src/main/java/io/github/lbevan/twitter/configuration/TwitterAutoConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/components/ViewAnalysisRequest.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/node_modules/vue-router/types/router.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="605">
+          <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/request/AnalysisRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/request/PhraseAnalysisRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/service/domain/request/TweetAnalysisRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="464">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-domain/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sentiment-engine/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="83" column="7" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+        <state relative-caret-position="256">
+          <caret line="16" column="13" selection-start-line="11" selection-start-column="4" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-service/twitter-service.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-service/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sentiment-service/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        <state relative-caret-position="242">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-spring-boot-autoconfigure/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/test/PhraseRequestHandler.java" />
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/test/RequestHandler.java" />
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/configuration/RequestHandlerConfiguration.java" />
+    <entry file="file://$PROJECT_DIR$/twitter-spring-boot-autoconfigure/src/main/java/io/github/lbevan/twitter/configuration/TwitterAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+        <state relative-caret-position="144">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-spring-boot-starter/pom.xml">
+    <entry file="file://$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/impl/TwitterService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="128">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twitter-service/src/main/resources/twitter.properties">
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/TweetAnalysisApiRequest.java" />
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/PhraseAnalysisApiRequest.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.7.RELEASE/spring-test-5.0.7.RELEASE.jar!/org/springframework/test/web/reactive/server/DefaultWebTestClient.class">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#17014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter-service/src/main/java/io/github/lbevan/twitter/service/domain/Tweet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/.eslintrc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/components/CreateAnalysisRequest.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="40" column="4" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+          <folding>
+            <element signature="e#498#560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/components/ButtonToggleGroup.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/components/PhraseAnalysisRequestInput.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/components/TweetAnalysisRequestInput.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-web/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-engine/src/main/java/io/github/lbevan/sentiment/SentimentEngineApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/sentiment/service/domain/dto/TweetAnalysisRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/sentiment/service/domain/dto/PhraseAnalysisRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-domain/src/main/java/io/github/lbevan/sentiment/service/domain/dto/AnalysisRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/configuration/JacksonConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/SentimentRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/controller/TestSentimentRequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="21" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/service/impl/TestPhraseAnalysisRequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="33" column="15" lean-forward="true" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/test/java/io/github/lbevan/sentiment/service/impl/TestTweetAnalysisRequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/AnalysisType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/domain/SimpleAnalysisApiRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/AnalysisRequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="29" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/TweetAnalysisRequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/impl/PhraseAnalysisRequestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="31" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/SentimentServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sentiment-service/src/main/java/io/github/lbevan/sentiment/service/Util/UUIDGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1315,7 +1529,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>twitter-spring-boot-starter</last-edited>
+          <last-edited>sentiment-service</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1340,7 +1554,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.2.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

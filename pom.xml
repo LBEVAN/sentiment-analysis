@@ -22,10 +22,12 @@
     </properties>
 
     <modules>
+        <module>sentiment-domain</module>
         <module>twitter-service</module>
         <module>twitter-spring-boot-autoconfigure</module>
         <module>twitter-spring-boot-starter</module>
         <module>sentiment-engine</module>
+        <module>sentiment-web</module>
     </modules>
 
 </project>

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/sentiment-domain/sentiment-domain.iml" filepath="$PROJECT_DIR$/sentiment-domain/sentiment-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/sentiment-engine/sentiment-engine.iml" filepath="$PROJECT_DIR$/sentiment-engine/sentiment-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sentiment-service/sentiment-service.iml" filepath="$PROJECT_DIR$/sentiment-service/sentiment-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sentiment-web/sentiment-web.iml" filepath="$PROJECT_DIR$/sentiment-web/sentiment-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/twitter-service/twitter-service.iml" filepath="$PROJECT_DIR$/twitter-service/twitter-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/twitter-spring-boot-autoconfigure/twitter-spring-boot-autoconfigure.iml" filepath="$PROJECT_DIR$/twitter-spring-boot-autoconfigure/twitter-spring-boot-autoconfigure.iml" />
       <module fileurl="file://$PROJECT_DIR$/twitter-spring-boot-starter/twitter-spring-boot-starter.iml" filepath="$PROJECT_DIR$/twitter-spring-boot-starter/twitter-spring-boot-starter.iml" />

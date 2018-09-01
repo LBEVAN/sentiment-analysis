@@ -1,11 +1,11 @@
 package io.github.lbevan.sentiment.strategy;
 
-import io.github.lbevan.sentiment.domain.request.TweetAnalysisRequest;
-import io.github.lbevan.sentiment.domain.result.AnalysisResult;
-import io.github.lbevan.sentiment.domain.result.Sentiment;
+import io.github.lbevan.sentiment.service.domain.request.TweetAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.result.Sentiment;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
-import io.github.lbevan.twitter.domain.Tweet;
-import io.github.lbevan.twitter.service.TwitterService;
+import io.github.lbevan.twitter.service.domain.Tweet;
+import io.github.lbevan.twitter.service.impl.TwitterService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

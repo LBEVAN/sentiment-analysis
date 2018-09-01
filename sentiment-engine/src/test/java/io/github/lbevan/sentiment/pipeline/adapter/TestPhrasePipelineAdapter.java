@@ -1,6 +1,6 @@
 package io.github.lbevan.sentiment.pipeline.adapter;
 
-import io.github.lbevan.sentiment.domain.request.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.request.PhraseAnalysisRequest;
 import io.github.lbevan.sentiment.pipeline.Payload;
 import org.junit.jupiter.api.Test;
 

@@ -1,8 +1,8 @@
 package io.github.lbevan.sentiment.strategy;
 
-import io.github.lbevan.sentiment.domain.request.PhraseAnalysisRequest;
-import io.github.lbevan.sentiment.domain.request.TweetAnalysisRequest;
-import io.github.lbevan.sentiment.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.request.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.request.TweetAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
 import io.github.lbevan.sentiment.pipeline.Pipeline;
 import io.github.lbevan.sentiment.pipeline.adapter.TweetPipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.AnalysisPipe;
