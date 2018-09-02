@@ -1,0 +1,35 @@
+version: "3.3"
+
+services:
+  sentiment-database:
+    image: mongo
+    container_name: sentiment-database
+    ports:
+      - "27017:27017" # app port
+    volumes:
+      - database-data:/data/db
+    networks:
+      sentiment-network:
+        aliases:
+          - "sentiment-database"
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672" # app port
+      - "15672:15672" # management port
+    networks:
+      sentiment-network:
+        aliases:
+          - "rabbitmq"
+
+networks:
+  sentiment-network:
+    driver: bridge
+
+volumes:
+  database-data:
+
+#    environment:
+#      - DATABASE_URI=mongodb://sampledb/sample
