@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+io.github.lbevan.repository.configuration.RepositoryAutoConfiguration
