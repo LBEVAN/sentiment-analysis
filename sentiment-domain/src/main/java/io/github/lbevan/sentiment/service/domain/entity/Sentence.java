@@ -1,6 +1,9 @@
-package io.github.lbevan.sentiment.service.domain.result;
+package io.github.lbevan.sentiment.service.domain.entity;
 
 import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.springframework.data.annotation.PersistenceConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
 
@@ -8,11 +11,19 @@ import java.io.Serializable;
  * Model class for a sentence analysis result.
  */
 @JsonDeserialize(using = SentenceDeserializer.class)
-public class Sentence implements Serializable {
+@Document(collection = "sentence")
+public class Sentence extends BaseEntity {
 
+    @Field("sentimentValue")
     private String sentimentValue;
+
+    @Field("sentiment")
     private String sentiment;
+
+    @Field("sentimentTree")
     private String sentimentTree;
+
+    @Field("sentimentDistribution")
     private Float[] sentimentDistribution;
 
     /**
@@ -23,6 +34,7 @@ public class Sentence implements Serializable {
      * @param sentimentTree
      * @param sentimentDistribution
      */
+    @PersistenceConstructor
     public Sentence(String sentimentValue, String sentiment, String sentimentTree, Float[] sentimentDistribution) {
         this.sentimentValue = sentimentValue;
         this.sentiment = sentiment;

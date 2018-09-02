@@ -26,6 +26,12 @@
         <module>twitter-service</module>
         <module>twitter-spring-boot-autoconfigure</module>
         <module>twitter-spring-boot-starter</module>
+        <module>sentiment-repository</module>
+        <module>repository-spring-boot-autoconfigure</module>
+        <module>repository-spring-boot-starter</module>
+        <module>rabbitmq-service</module>
+        <module>rabbitmq-spring-boot-autoconfigure</module>
+        <module>rabbitmq-spring-boot-starter</module>
         <module>sentiment-engine</module>
         <module>sentiment-web</module>
     </modules>

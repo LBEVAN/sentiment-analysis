@@ -20,7 +20,22 @@
         <!-- 1st Party Dependencies -->
         <dependency>
             <groupId>io.github.lbevan</groupId>
+            <artifactId>sentiment-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.lbevan</groupId>
+            <artifactId>repository-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.lbevan</groupId>
             <artifactId>twitter-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.lbevan</groupId>
+            <artifactId>rabbitmq-spring-boot-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- End 1st Party Dependencies -->

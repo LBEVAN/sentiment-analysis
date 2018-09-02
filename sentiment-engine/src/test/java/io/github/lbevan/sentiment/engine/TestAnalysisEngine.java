@@ -1,6 +1,6 @@
 package io.github.lbevan.sentiment.engine;
 
-import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.service.domain.result.Sentiment;
 import org.junit.jupiter.api.Test;
 

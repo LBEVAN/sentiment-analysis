@@ -1,6 +1,6 @@
 package io.github.lbevan.sentiment.pipeline;
 
-import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.pipeline.adapter.PipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.Pipe;
 

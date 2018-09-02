@@ -1,7 +1,8 @@
 package io.github.lbevan.sentiment.strategy;
 
-import io.github.lbevan.sentiment.service.domain.request.TweetAnalysisRequest;
-import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
+import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.service.domain.result.Sentiment;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
 import io.github.lbevan.twitter.service.domain.Tweet;
@@ -9,6 +10,7 @@ import io.github.lbevan.twitter.service.impl.TwitterService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -21,6 +23,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * Test class for {@link TweetAnalysis}.
@@ -38,6 +42,8 @@ public class TestTweetAnalysis {
     @Autowired
     private SpringBeanUtil springBeanUtil;
 
+    private AnalysisResultRepository analysisResultRepository;
+
     @BeforeEach
     private void setUp() {
         MockitoAnnotations.initMocks(this);
@@ -45,15 +51,19 @@ public class TestTweetAnalysis {
         Mockito.when(twitterService.getTweetById("1017825387785719808"))
                 .thenReturn(new Tweet(new Long(000001), "I love Monday mornings!"));
         springBeanUtil.setApplicationContext(context);
+        analysisResultRepository = mock(AnalysisResultRepository.class);
     }
 
     @Test
     public void whenRequestReceived_thenRequestIsProcessedAndResultIsReturned() {
         TweetAnalysisRequest request = new TweetAnalysisRequest("1017825387785719808");
 
-        List<AnalysisResult> analysisResult = new TweetAnalysis().receiveRequest(request);
+        new TweetAnalysis(analysisResultRepository).receiveRequest(request);
 
-        assertEquals(1, analysisResult.size());
-        assertTrue(analysisResult.get(0).getSentiment().equals(Sentiment.POSITIVE.getDescription()));
+        ArgumentCaptor<List<AnalysisResult>> captor = ArgumentCaptor.forClass(List.class);
+        verify(analysisResultRepository).saveAll(captor.capture());
+
+        assertEquals(1, captor.getValue().size());
+        assertTrue(captor.getValue().get(0).getSentiment().equals(Sentiment.POSITIVE.getDescription()));
     }
 }

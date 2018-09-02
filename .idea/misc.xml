@@ -13,6 +13,13 @@
         <option value="$PROJECT_DIR$/sentiment-web/pom.xml" />
         <option value="$PROJECT_DIR$/sentiment-service/pom.xml" />
         <option value="$PROJECT_DIR$/sentiment-domain/pom.xml" />
+        <option value="$PROJECT_DIR$/sentiment-repository/pom.xml" />
+        <option value="$PROJECT_DIR$/sentiment-spring-boot-autoconfigure/pom.xml" />
+        <option value="$PROJECT_DIR$/repository-spring-boot-autoconfigure/pom.xml" />
+        <option value="$PROJECT_DIR$/repository-spring-boot-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-spring-boot-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-spring-boot-autoconfigure/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-service/pom.xml" />
       </list>
     </option>
   </component>

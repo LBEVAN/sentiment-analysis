@@ -1,5 +1,6 @@
-package io.github.lbevan.sentiment.service.domain.result;
+package io.github.lbevan.sentiment.service.domain.entity;
 
+import io.github.lbevan.sentiment.service.domain.entity.Sentence;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.JsonProcessingException;

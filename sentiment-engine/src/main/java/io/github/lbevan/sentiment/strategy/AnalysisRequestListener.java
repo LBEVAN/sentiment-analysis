@@ -1,7 +1,7 @@
 package io.github.lbevan.sentiment.strategy;
 
-import io.github.lbevan.sentiment.service.domain.request.AnalysisRequest;
-import io.github.lbevan.sentiment.service.domain.result.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.dto.AnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 
 import java.util.List;
 
@@ -18,7 +18,6 @@ public interface AnalysisRequestListener<T extends AnalysisRequest> {
      * and point to the relevant queue.
      *
      * @param request the request to process.
-     * @return List of analysis results.
      */
-    List<AnalysisResult> receiveRequest(T request);
+    void receiveRequest(T request);
 }

@@ -1,7 +1,7 @@
 package io.github.lbevan.sentiment.pipeline.adapter;
 
-import io.github.lbevan.sentiment.service.domain.request.PhraseAnalysisRequest;
 import io.github.lbevan.sentiment.pipeline.Payload;
+import io.github.lbevan.sentiment.service.domain.dto.PhraseAnalysisRequest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,5 +1,11 @@
-package io.github.lbevan.sentiment.service.domain.result;
+package io.github.lbevan.sentiment.service.domain.entity;
 
+
+import io.github.lbevan.sentiment.service.domain.annotation.CascadeSave;
+import org.springframework.data.annotation.PersistenceConstructor;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
 import java.util.List;
@@ -7,11 +13,36 @@ import java.util.List;
 /**
  * Encapsulates a singular analysis result (with potentially many sentences).
  */
-public class AnalysisResult implements Serializable {
+@Document(collection = "analysisResult")
+public class AnalysisResult extends BaseEntity {
 
+    @DBRef
+    @CascadeSave
     private List<Sentence> sentences;
+
+    @Field("averageSentiment")
     private String averageSentiment;
+
+    @Field("averageSentimentScore")
     private float averageSentimentScore;
+
+    @Field("requestId")
+    private String requestId;
+
+    /**
+     * Constructor.
+     *
+     * @param sentences
+     * @param averageSentiment
+     * @param averageSentimentScore
+     */
+    @PersistenceConstructor
+    public AnalysisResult(List<Sentence> sentences, String averageSentiment, float averageSentimentScore, String requestId) {
+        this.sentences = sentences;
+        this.averageSentiment = averageSentiment;
+        this.averageSentimentScore = averageSentimentScore;
+        this.requestId = requestId;
+    }
 
     /**
      * Constructor.

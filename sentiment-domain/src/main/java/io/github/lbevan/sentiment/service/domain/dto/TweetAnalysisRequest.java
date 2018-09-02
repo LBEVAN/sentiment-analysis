@@ -1,19 +1,36 @@
 package io.github.lbevan.sentiment.service.domain.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * An {@link AnalysisRequest} implementation for a single tweet.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TweetAnalysisRequest implements AnalysisRequest {
 
     private String tweetId;
+    private String requestId;
 
     /**
      * Constructor.
      *
      * @param tweetId id of the tweet to process
      */
-    public TweetAnalysisRequest(String tweetId) {
+    @JsonCreator
+    public TweetAnalysisRequest(@JsonProperty("tweetId") String tweetId) {
         this.tweetId = tweetId;
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param tweetId id of the tweet to process
+     */
+    public TweetAnalysisRequest(String tweetId, String requestId) {
+        this.tweetId = tweetId;
+        this.requestId = requestId;
     }
 
     /**
@@ -23,5 +40,14 @@ public class TweetAnalysisRequest implements AnalysisRequest {
      */
     public String getTweetId() {
         return tweetId;
+    }
+
+    /**
+     * Retrieve the request id.
+     *
+     * @return String request id
+     */
+    public String getRequestId() {
+        return requestId;
     }
 }

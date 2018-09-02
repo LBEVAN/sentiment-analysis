@@ -7,8 +7,15 @@
 /twitter-service/target
 /twitter-spring-boot-autoconfigure/target
 /twitter-spring-boot-starter/target
+/sentiment-repository/target
+/repository-spring-boot-autoconfigure/target
+/repository-spring-boot-starter/target
+/rabbitmq-service/target
+/rabbitmq-spring-boot-autoconfigure/target
+/rabbitmq-spring-boot-starter/target
 /sentiment-domain/target
 /sentiment-engine/target
 /sentiment-service/target
+/sentiment-web/target
 
 /sentiment-web/node_modules

@@ -1,7 +1,12 @@
 package io.github.lbevan.sentiment.service.impl;
 
+import io.github.lbevan.rabbitmq.service.impl.RabbitMQService;
+import io.github.lbevan.sentiment.repository.impl.PhraseAnalysisRequestRepository;
 import io.github.lbevan.sentiment.service.Util.UUIDGenerator;
 import io.github.lbevan.sentiment.service.domain.SimpleAnalysisApiRequest;
+import io.github.lbevan.sentiment.service.domain.dto.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.entity.PhraseAnalysisRequestEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +23,16 @@ import java.util.UUID;
 @CrossOrigin
 public class PhraseAnalysisRequestController {
 
-//    private final RabbitTemplate rabbitTemplate;
-//
-//    @Autowired
-//    public PhraseAnalysisRequestController(RabbitTemplate rabbitTemplate) {
-//        this.rabbitTemplate = rabbitTemplate;
-//    }
+    private final PhraseAnalysisRequestRepository repository;
+    private final RabbitMQService rabbitMQService;
+
+
+    @Autowired
+    public PhraseAnalysisRequestController(PhraseAnalysisRequestRepository repository,
+                                           RabbitMQService rabbitMQService) {
+        this.repository = repository;
+        this.rabbitMQService = rabbitMQService;
+    }
 
     /**
      * REST API Endpoint. Request analysis of a phrase.
@@ -32,12 +41,16 @@ public class PhraseAnalysisRequestController {
      */
     @PostMapping(value = "/phrase", headers = { "accept=application/json", "content-type=application/json" })
     public ResponseEntity<UUID> createRequest(@RequestBody SimpleAnalysisApiRequest request) {
+        // todo: cleanup dto usage here!
         UUID uuid = UUIDGenerator.generateUUID();
 
-        // todo: save the request
+        try {
+            repository.insert(new PhraseAnalysisRequestEntity(uuid.toString(), request.getData()));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
-        // todo: send message to queue
-        // rabbitTemplate.convertAndSend("twitter_tweet_request", sentimentRequest);
+        rabbitMQService.sendPhraseAnalysisRequest(new PhraseAnalysisRequest(request.getData(), uuid.toString()));
 
         return new ResponseEntity<>(uuid, HttpStatus.OK);
     }

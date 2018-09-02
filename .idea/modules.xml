@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq-service/rabbitmq-service.iml" filepath="$PROJECT_DIR$/rabbitmq-service/rabbitmq-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq-spring-boot-autoconfigure/rabbitmq-spring-boot-autoconfigure.iml" filepath="$PROJECT_DIR$/rabbitmq-spring-boot-autoconfigure/rabbitmq-spring-boot-autoconfigure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq-spring-boot-starter/rabbitmq-spring-boot-starter.iml" filepath="$PROJECT_DIR$/rabbitmq-spring-boot-starter/rabbitmq-spring-boot-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repository-spring-boot-autoconfigure/repository-spring-boot-autoconfigure.iml" filepath="$PROJECT_DIR$/repository-spring-boot-autoconfigure/repository-spring-boot-autoconfigure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repository-spring-boot-starter/repository-spring-boot-starter.iml" filepath="$PROJECT_DIR$/repository-spring-boot-starter/repository-spring-boot-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/sentiment-domain/sentiment-domain.iml" filepath="$PROJECT_DIR$/sentiment-domain/sentiment-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/sentiment-engine/sentiment-engine.iml" filepath="$PROJECT_DIR$/sentiment-engine/sentiment-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sentiment-repository/sentiment-repository.iml" filepath="$PROJECT_DIR$/sentiment-repository/sentiment-repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/sentiment-service/sentiment-service.iml" filepath="$PROJECT_DIR$/sentiment-service/sentiment-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/sentiment-web/sentiment-web.iml" filepath="$PROJECT_DIR$/sentiment-web/sentiment-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/twitter-service/twitter-service.iml" filepath="$PROJECT_DIR$/twitter-service/twitter-service.iml" />

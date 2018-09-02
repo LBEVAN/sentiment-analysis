@@ -1,8 +1,8 @@
 package io.github.lbevan.sentiment.pipeline.adapter;
 
-import io.github.lbevan.sentiment.service.domain.request.TweetAnalysisRequest;
 import io.github.lbevan.sentiment.pipeline.Payload;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
+import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequest;
 import io.github.lbevan.twitter.service.domain.Tweet;
 import io.github.lbevan.twitter.service.impl.TwitterService;
 
@@ -38,6 +38,6 @@ public class TweetPipelineAdapter implements PipelineAdapter {
         LinkedList<String> payloadData = new LinkedList<>();
         payloadData.add(tweet.getText());
 
-        return new Payload(payloadData);
+        return new Payload(request.getRequestId(), payloadData);
     }
 }

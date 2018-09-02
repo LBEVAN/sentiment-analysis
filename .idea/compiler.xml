@@ -6,8 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="rabbitmq-service" />
+        <module name="rabbitmq-spring-boot-autoconfigure" />
+        <module name="rabbitmq-spring-boot-starter" />
+        <module name="repository-spring-boot-autoconfigure" />
+        <module name="repository-spring-boot-starter" />
         <module name="sentiment-domain" />
         <module name="sentiment-engine" />
+        <module name="sentiment-repository" />
         <module name="sentiment-service" />
         <module name="sentiment-web" />
         <module name="twitter-service" />
@@ -16,8 +22,14 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="rabbitmq-service" target="1.8" />
+      <module name="rabbitmq-spring-boot-autoconfigure" target="1.8" />
+      <module name="rabbitmq-spring-boot-starter" target="1.8" />
+      <module name="repository-spring-boot-autoconfigure" target="1.8" />
+      <module name="repository-spring-boot-starter" target="1.8" />
       <module name="sentiment-domain" target="1.8" />
       <module name="sentiment-engine" target="1.8" />
+      <module name="sentiment-repository" target="1.8" />
       <module name="sentiment-service" target="1.8" />
       <module name="sentiment-web" target="1.5" />
       <module name="twitter-service" target="1.8" />
