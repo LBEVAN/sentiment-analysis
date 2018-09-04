@@ -5,8 +5,6 @@ import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.io.Serializable;
-
 /**
  * Model class for a sentence analysis result.
  */
@@ -14,8 +12,8 @@ import java.io.Serializable;
 @Document(collection = "sentence")
 public class Sentence extends BaseEntity {
 
-    @Field("sentimentValue")
-    private String sentimentValue;
+    @Field("sentimentScore")
+    private String sentimentScore;
 
     @Field("sentiment")
     private String sentiment;
@@ -29,26 +27,26 @@ public class Sentence extends BaseEntity {
     /**
      * Constructor.
      *
-     * @param sentimentValue
+     * @param sentimentScore
      * @param sentiment
      * @param sentimentTree
      * @param sentimentDistribution
      */
     @PersistenceConstructor
-    public Sentence(String sentimentValue, String sentiment, String sentimentTree, Float[] sentimentDistribution) {
-        this.sentimentValue = sentimentValue;
+    public Sentence(String sentimentScore, String sentiment, String sentimentTree, Float[] sentimentDistribution) {
+        this.sentimentScore = sentimentScore;
         this.sentiment = sentiment;
         this.sentimentTree = sentimentTree;
         this.sentimentDistribution = sentimentDistribution;
     }
 
     /**
-     * Retrieve the sentiment value.
+     * Retrieve the sentiment score.
      *
-     * @return String sentiment value
+     * @return String sentiment score
      */
-    public String getSentimentValue() {
-        return sentimentValue;
+    public String getSentimentScore() {
+        return sentimentScore;
     }
 
     /**

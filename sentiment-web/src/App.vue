@@ -28,6 +28,14 @@ export default {
   text-align: center;
 }
 
+.wrapper-50 {
+  margin: auto;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .section {
   margin-top: 5vh;
   margin-bottom: 5vh;

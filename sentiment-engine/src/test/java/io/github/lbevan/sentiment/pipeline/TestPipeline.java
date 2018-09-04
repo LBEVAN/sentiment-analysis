@@ -1,6 +1,6 @@
 package io.github.lbevan.sentiment.pipeline;
 
-import io.github.lbevan.sentiment.service.domain.dto.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.pipeline.adapter.PhrasePipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.adapter.PipelineAdapter;
@@ -45,7 +45,7 @@ public class TestPipeline {
     @Test
     public void whenPipelineIsUsedForProcessing_thenTheRequestIsProcessedAndResultIsReturned() {
         try {
-            PhraseAnalysisRequest request = new PhraseAnalysisRequest("This is my 1st sentence. This is my second!");
+            TextAnalysisRequestDto request = new TextAnalysisRequestDto("This is my 1st sentence. This is my second!");
 
             List<AnalysisResult> results = new Pipeline.PipelineBuilder()
                     .adapt(new PhrasePipelineAdapter(request))

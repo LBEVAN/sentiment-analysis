@@ -1,7 +1,7 @@
 package io.github.lbevan.sentiment.pipeline.adapter;
 
 import io.github.lbevan.sentiment.pipeline.Payload;
-import io.github.lbevan.sentiment.service.domain.dto.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,7 +13,7 @@ public class TestPhrasePipelineAdapter {
 
     @Test
     public void whenAdapterExecuted_thenRequestProcessedIntoPayload() {
-        PhraseAnalysisRequest request = new PhraseAnalysisRequest("My phrase");
+        TextAnalysisRequestDto request = new TextAnalysisRequestDto("My phrase");
         PhrasePipelineAdapter adapter = new PhrasePipelineAdapter(request);
 
         Payload payload = adapter.adapt();

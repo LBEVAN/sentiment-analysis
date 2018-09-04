@@ -1,8 +1,8 @@
 package io.github.lbevan.rabbitmq.service.impl;
 
 import io.github.lbevan.rabbitmq.configuration.RabbitMQProperties;
-import io.github.lbevan.sentiment.service.domain.dto.PhraseAnalysisRequest;
-import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
+import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,13 +19,13 @@ public class RabbitMQService {
         this.rabbitMQProperties = rabbitMQProperties;
     }
 
-    public void sendPhraseAnalysisRequest(final PhraseAnalysisRequest request) {
+    public void sendPhraseAnalysisRequest(final TextAnalysisRequestDto request) {
         rabbitTemplate.convertAndSend(rabbitMQProperties.getExchange(),
                 rabbitMQProperties.getPhraseRequestQueueKey(),
                 request);
     }
 
-    public void sendTweetAnalysisRequest(final TweetAnalysisRequest request) {
+    public void sendTweetAnalysisRequest(final TweetAnalysisRequestDto request) {
         rabbitTemplate.convertAndSend(rabbitMQProperties.getExchange(),
                 rabbitMQProperties.getTweetRequestQueueKey(),
                 request);

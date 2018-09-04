@@ -41,6 +41,14 @@
         </dependency>
         <!-- End Spring Dependencies -->
 
+        <!-- Util Dependencies -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>26.0-jre</version>
+        </dependency>
+        <!-- End Util Dependenies -->
+
         <!-- Test Dependencies -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>

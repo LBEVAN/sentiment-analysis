@@ -7,22 +7,12 @@ const client = axios.create({
 
 export default {
 
-  getAnalysisRequests () {
-    return client.get('/requests/test')
-      .then(response => { return response.data })
-  },
-
-  getAnalysisOptions () {
-    return client.get('/requests/options')
-      .then(response => { return response.data })
-  },
-
-  createPhraseAnalysisRequest (phrase) {
+  createTextAnalysisRequest (text) {
     var data = {
-      data: phrase
+      text: text
     }
 
-    return client.post('/requests/phrase', data)
+    return client.post('/request/text', data)
       .then(response => { return response.data })
   },
 
@@ -31,7 +21,17 @@ export default {
       data: tweetId
     }
 
-    return client.post('/requests/tweet', data)
+    return client.post('/request/tweet', data)
       .then(response => { return response.data })
+  },
+
+  getRequestById (id) {
+    return client.get('/request/' + id)
+      .then(response => {
+        return response.data
+      })
+      .catch(error => {
+        throw error
+      })
   }
 }

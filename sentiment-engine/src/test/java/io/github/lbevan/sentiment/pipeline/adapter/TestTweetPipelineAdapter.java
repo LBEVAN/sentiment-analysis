@@ -2,7 +2,7 @@ package io.github.lbevan.sentiment.pipeline.adapter;
 
 import io.github.lbevan.sentiment.pipeline.Payload;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
-import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.twitter.service.domain.Tweet;
 import io.github.lbevan.twitter.service.impl.TwitterService;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,7 +45,7 @@ public class TestTweetPipelineAdapter {
 
     @Test
     public void whenAdapterExecuted_thenRequestProcessedIntoPayload() {
-        TweetAnalysisRequest request = new TweetAnalysisRequest("1017825387785719808");
+        TweetAnalysisRequestDto request = new TweetAnalysisRequestDto("1017825387785719808");
         TweetPipelineAdapter adapter = new TweetPipelineAdapter(request);
 
         Payload payload = adapter.adapt();

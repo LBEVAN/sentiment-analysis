@@ -18,25 +18,25 @@
 
 <script>
 import ButtonToggleGroup from '@/components/ButtonToggleGroup'
-import PhraseAnalysisRequestInput from '@/components/PhraseAnalysisRequestInput'
+import TextAnalysisRequestInput from '@/components/TextAnalysisRequestInput'
 import TweetAnalysisRequestInput from '@/components/TweetAnalysisRequestInput'
 
 export default {
   name: 'CreateAnalysisRequest',
   components: {
     'button-toggle-group': ButtonToggleGroup,
-    'phrase': PhraseAnalysisRequestInput,
-    'tweet': TweetAnalysisRequestInput
+    'text-input': TextAnalysisRequestInput,
+    'tweet-input': TweetAnalysisRequestInput
   },
   data () {
     return {
       options: [
-        {name: 'Phrase', component: 'phrase'},
-        {name: 'Twitter - Tweet', component: 'tweet'}
+        { name: 'Text', component: 'text-input' },
+        { name: 'Twitter - Tweet', component: 'tweet-input' }
       ],
       chosenOption: null,
       currentComponent: null,
-      componentsArray: ['phrase', 'tweet']
+      componentsArray: ['text-input', 'tweet-input']
     }
   },
   methods: {

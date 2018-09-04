@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * An {@link AnalysisRequest} implementation for a single tweet.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TweetAnalysisRequest implements AnalysisRequest {
+public class TweetAnalysisRequestDto implements AnalysisRequest {
 
     private String tweetId;
     private String requestId;
@@ -19,7 +19,7 @@ public class TweetAnalysisRequest implements AnalysisRequest {
      * @param tweetId id of the tweet to process
      */
     @JsonCreator
-    public TweetAnalysisRequest(@JsonProperty("tweetId") String tweetId) {
+    public TweetAnalysisRequestDto(@JsonProperty("tweetId") String tweetId) {
         this.tweetId = tweetId;
     }
 
@@ -28,7 +28,7 @@ public class TweetAnalysisRequest implements AnalysisRequest {
      *
      * @param tweetId id of the tweet to process
      */
-    public TweetAnalysisRequest(String tweetId, String requestId) {
+    public TweetAnalysisRequestDto(String tweetId, String requestId) {
         this.tweetId = tweetId;
         this.requestId = requestId;
     }

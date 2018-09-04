@@ -38,12 +38,12 @@ public class SentenceDeserializer extends StdDeserializer<Sentence> {
     public Sentence deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
         JsonNode rootNode = jsonParser.getCodec().readTree(jsonParser);
 
-        String sentimentValue = rootNode.get("sentimentValue").asText();
+        String sentimentScore = rootNode.get("sentimentValue").asText();
         String sentiment = rootNode.get("sentiment").asText();
         String sentimentTree = rootNode.get("sentimentTree").asText();
         ObjectMapper objectMapper = new ObjectMapper();
         Float[] sentimentDistribution = objectMapper.readValue(rootNode.get("sentimentDistribution"), Float[].class);
 
-        return new Sentence(sentimentValue, sentiment, sentimentTree, sentimentDistribution);
+        return new Sentence(sentimentScore, sentiment, sentimentTree, sentimentDistribution);
     }
 }

@@ -2,7 +2,7 @@ package io.github.lbevan.sentiment.pipeline.adapter;
 
 import io.github.lbevan.sentiment.pipeline.Payload;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
-import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.twitter.service.domain.Tweet;
 import io.github.lbevan.twitter.service.impl.TwitterService;
 
@@ -13,7 +13,7 @@ import java.util.LinkedList;
  */
 public class TweetPipelineAdapter implements PipelineAdapter {
 
-    private TweetAnalysisRequest request;
+    private TweetAnalysisRequestDto request;
     private TwitterService twitterService;
 
     /**
@@ -21,7 +21,7 @@ public class TweetPipelineAdapter implements PipelineAdapter {
      *
      * @param request the phrase request
      */
-    public TweetPipelineAdapter(TweetAnalysisRequest request) {
+    public TweetPipelineAdapter(TweetAnalysisRequestDto request) {
         this.request = request;
         this.twitterService = SpringBeanUtil.getBean(TwitterService.class);
     }

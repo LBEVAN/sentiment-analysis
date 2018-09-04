@@ -6,7 +6,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon3">https://twitter.com/</span>
       </div>
-      <input type="text" class="form-control" id="tweet-url" aria-describedby="basic-addon3" placeholder="example/status/1035866523569549313" v-model="tweetId">
+      <input type="text" class="form-control" id="tweet-url" aria-describedby="basic-addon3" placeholder="example/status/1035866523569549313" required v-model="tweetId">
     </div>
 
     <button type="submit" class="btn btn-primary">Start Analysis</button>

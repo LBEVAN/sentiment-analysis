@@ -5,42 +5,42 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * An {@link AnalysisRequest} implementation for a single phrase.
+ * An {@link AnalysisRequest} implementation for text.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PhraseAnalysisRequest implements AnalysisRequest {
+public class TextAnalysisRequestDto implements AnalysisRequest {
 
-    private String phrase;
+    private String text;
     private String requestId;
 
     /**
      * Constructor.
      *
-     * @param phrase phrase to be analysed
+     * @param text the text to be analysed
      */
     @JsonCreator
-    public PhraseAnalysisRequest(@JsonProperty("phrase") String phrase) {
-        this.phrase = phrase;
+    public TextAnalysisRequestDto(@JsonProperty("text") String text) {
+        this.text = text;
     }
 
     /**
      * Constructor.
      *
-     * @param phrase phrase to be analysed
+     * @param text the text to be analysed
      * @param requestId the request id
      */
-    public PhraseAnalysisRequest(String phrase, String requestId) {
-        this.phrase = phrase;
+    public TextAnalysisRequestDto(String text, String requestId) {
+        this.text = text;
         this.requestId = requestId;
     }
 
     /**
-     * Retrieve the phrase.
+     * Retrieve the text.
      *
-     * @return String the phrase
+     * @return String the text
      */
-    public String getPhrase() {
-        return phrase;
+    public String getText() {
+        return text;
     }
 
     /**

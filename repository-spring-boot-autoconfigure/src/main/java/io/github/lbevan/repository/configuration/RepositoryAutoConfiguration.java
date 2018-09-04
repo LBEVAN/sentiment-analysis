@@ -7,8 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
 @PropertySource("classpath:repository.properties")

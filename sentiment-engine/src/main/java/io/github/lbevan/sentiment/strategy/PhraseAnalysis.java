@@ -4,7 +4,7 @@ import io.github.lbevan.sentiment.pipeline.Pipeline;
 import io.github.lbevan.sentiment.pipeline.adapter.PhrasePipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.AnalysisPipe;
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
-import io.github.lbevan.sentiment.service.domain.dto.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,10 @@ import java.util.List;
 
 /**
  * An {@link AnalysisRequestListener} implementation for a single phrase.
- * This accepts requests with the signature: {@link PhraseAnalysisRequest}.
+ * This accepts requests with the signature: {@link TextAnalysisRequestDto}.
  */
 @Component
-public class PhraseAnalysis implements AnalysisRequestListener<PhraseAnalysisRequest> {
+public class PhraseAnalysis implements AnalysisRequestListener<TextAnalysisRequestDto> {
 
     private final AnalysisResultRepository analysisResultRepository;
 
@@ -34,7 +34,7 @@ public class PhraseAnalysis implements AnalysisRequestListener<PhraseAnalysisReq
      */
     @RabbitListener(queues = "${rabbitmq.queue.request.phrase}")
     @Override
-    public void receiveRequest(PhraseAnalysisRequest request) {
+    public void receiveRequest(TextAnalysisRequestDto request) {
         List<AnalysisResult> results = new Pipeline.PipelineBuilder()
                 .adapt(new PhrasePipelineAdapter(request))
                 .pipe(new AnalysisPipe())

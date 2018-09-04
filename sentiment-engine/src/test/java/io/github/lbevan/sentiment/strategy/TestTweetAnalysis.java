@@ -1,7 +1,7 @@
 package io.github.lbevan.sentiment.strategy;
 
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
-import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.service.domain.result.Sentiment;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
@@ -56,7 +56,7 @@ public class TestTweetAnalysis {
 
     @Test
     public void whenRequestReceived_thenRequestIsProcessedAndResultIsReturned() {
-        TweetAnalysisRequest request = new TweetAnalysisRequest("1017825387785719808");
+        TweetAnalysisRequestDto request = new TweetAnalysisRequestDto("1017825387785719808");
 
         new TweetAnalysis(analysisResultRepository).receiveRequest(request);
 

@@ -1,7 +1,7 @@
 package io.github.lbevan.sentiment.pipeline.adapter;
 
 import io.github.lbevan.sentiment.pipeline.Payload;
-import io.github.lbevan.sentiment.service.domain.dto.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 
 import java.util.LinkedList;
 
@@ -10,14 +10,14 @@ import java.util.LinkedList;
  */
 public class PhrasePipelineAdapter implements PipelineAdapter {
 
-    private PhraseAnalysisRequest request;
+    private TextAnalysisRequestDto request;
 
     /**
      * Constructor.
      *
      * @param request the phrase request
      */
-    public PhrasePipelineAdapter(PhraseAnalysisRequest request) {
+    public PhrasePipelineAdapter(TextAnalysisRequestDto request) {
         this.request = request;
     }
 
@@ -26,7 +26,7 @@ public class PhrasePipelineAdapter implements PipelineAdapter {
      */
     @Override
     public Payload adapt() {
-        String phrase = request.getPhrase();
+        String phrase = request.getText();
 
         LinkedList<String> payloadData = new LinkedList<>();
         payloadData.add(phrase);

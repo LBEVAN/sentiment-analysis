@@ -1,7 +1,7 @@
 package io.github.lbevan.sentiment.strategy;
 
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
-import io.github.lbevan.sentiment.service.domain.dto.PhraseAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.service.domain.result.Sentiment;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +29,7 @@ public class TestPhraseAnalysis {
 
     @Test
     public void whenRequestReceived_thenRequestIsProcessedAndResultIsReturned() {
-        PhraseAnalysisRequest request = new PhraseAnalysisRequest("This analysis engine is the best!");
+        TextAnalysisRequestDto request = new TextAnalysisRequestDto("This analysis engine is the best!");
 
         new PhraseAnalysis(analysisResultRepository).receiveRequest(request);
 

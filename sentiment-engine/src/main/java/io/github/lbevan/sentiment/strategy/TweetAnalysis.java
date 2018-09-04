@@ -4,7 +4,7 @@ import io.github.lbevan.sentiment.pipeline.Pipeline;
 import io.github.lbevan.sentiment.pipeline.adapter.TweetPipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.AnalysisPipe;
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
-import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequest;
+import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,10 @@ import java.util.List;
 
 /**
  * An {@link AnalysisRequestListener} implementation for a single tweet.
- * This accepts requests with the signature: {@link TweetAnalysisRequest}.
+ * This accepts requests with the signature: {@link TweetAnalysisRequestDto}.
  */
 @Component
-public class TweetAnalysis implements AnalysisRequestListener<TweetAnalysisRequest> {
+public class TweetAnalysis implements AnalysisRequestListener<TweetAnalysisRequestDto> {
 
     private final AnalysisResultRepository analysisResultRepository;
 
@@ -34,7 +34,7 @@ public class TweetAnalysis implements AnalysisRequestListener<TweetAnalysisReque
      */
     @RabbitListener(queues = "${rabbitmq.queue.request.tweet}")
     @Override
-    public void receiveRequest(TweetAnalysisRequest request) {
+    public void receiveRequest(TweetAnalysisRequestDto request) {
         List<AnalysisResult> results = new Pipeline.PipelineBuilder()
                 .adapt(new TweetPipelineAdapter(request))
                 .pipe(new AnalysisPipe())

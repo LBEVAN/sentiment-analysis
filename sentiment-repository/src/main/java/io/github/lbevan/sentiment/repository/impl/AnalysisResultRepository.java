@@ -9,11 +9,10 @@ import java.util.List;
 public interface AnalysisResultRepository extends MongoRepository<AnalysisResult, BigInteger> {
 
     /**
+     * Find all of the analysis results by request id.
      *
-     * @param entities
-     * @param <S>
+     * @param requestId
      * @return List<AnalysisResult>
      */
-    @Override
-    <S extends AnalysisResult> List<S> saveAll(Iterable<S> entities);
+    List<AnalysisResult> findByRequestId(String requestId);
 }
