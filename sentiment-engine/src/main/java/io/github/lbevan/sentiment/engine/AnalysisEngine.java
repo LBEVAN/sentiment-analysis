@@ -3,21 +3,17 @@ package io.github.lbevan.sentiment.engine;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations;
 import edu.stanford.nlp.pipeline.Annotation;
-import edu.stanford.nlp.pipeline.JSONOutputter;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
 import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.util.CoreMap;
-import io.github.lbevan.sentiment.service.domain.entity.Sentence;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.entity.Sentence;
 import io.github.lbevan.sentiment.service.domain.result.Sentiment;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.math3.util.Precision;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,45 +41,53 @@ public class AnalysisEngine {
      * @return AnalysisResult the analysis
      */
     public AnalysisResult calculateSentiment(String input) {
-        // perform analysis
         List<Integer> sentimentScores = new ArrayList<>();
+        List<Sentence> sentences = new ArrayList<>();
+
+        // perform analysis
         Annotation annotation = engine.process(input);
         for (CoreMap sentence : annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
             Tree tree = sentence.get(SentimentCoreAnnotations.SentimentAnnotatedTree.class);
+
+            // get the sentence information
+            String text = sentence.get(CoreAnnotations.TextAnnotation.class);
             int sentimentScore = RNNCoreAnnotations.getPredictedClass(tree);
+            String sentiment = Sentiment.getDescriptionByScore(sentimentScore);
+            double[] sentimentDistribution = RNNCoreAnnotations.getPredictions(tree).getMatrix().getData();
+
+            sentences.add(new Sentence(text, sentiment, sentimentScore, sentimentDistribution));
             sentimentScores.add(sentimentScore);
         }
 
         // get the results
-        List<Sentence> sentences = getAnalysedSentences(annotation);
         float averageSentimentScore = calculateAverageSentimentScore(sentimentScores);
         String averageSentiment = Sentiment.getDescriptionByScore(averageSentimentScore);
 
-        return new AnalysisResult(sentences, averageSentiment, averageSentimentScore);
+        return new AnalysisResult(input, sentences, averageSentiment, averageSentimentScore);
     }
 
-    /**
-     * Retrieve the analysed sentences from the annotation.
-     *
-     * @param annotation the analysis
-     * @return List the list of sentences
-     */
-    private List<Sentence> getAnalysedSentences(Annotation annotation) {
-        List<Sentence> sentences = new ArrayList<>();
-        try {
-            final ObjectMapper objectMapper = new ObjectMapper();
-
-            // get the analysis json
-            String json = JSONOutputter.jsonPrint(annotation);
-
-            // convert the analysis to our domain so we have only the attributes we want
-            JsonNode sentencesNode = objectMapper.readTree(json).get("sentences");
-            sentences = objectMapper.readValue(sentencesNode, objectMapper.getTypeFactory().constructCollectionType(List.class, Sentence.class));
-        } catch (IOException e) {
-            LOGGER.error("An error occurred analysing the data provided!");
-        }
-        return sentences;
-    }
+//    /**
+//     * Retrieve the analysed sentences from the annotation.
+//     *
+//     * @param annotation the analysis
+//     * @return List the list of sentences
+//     */
+//    private List<Sentence> getAnalysedSentences(Annotation annotation) {
+//        List<Sentence> sentences = new ArrayList<>();
+//        try {
+//            final ObjectMapper objectMapper = new ObjectMapper();
+//
+//            // get the analysis json
+//            String json = JSONOutputter.jsonPrint(annotation);
+//
+//            // convert the analysis to our domain so we have only the attributes we want
+//            JsonNode sentencesNode = objectMapper.readTree(json).get("sentences");
+//            sentences = objectMapper.readValue(sentencesNode, objectMapper.getTypeFactory().constructCollectionType(List.class, Sentence.class));
+//        } catch (IOException e) {
+//            LOGGER.error("An error occurred analysing the data provided!");
+//        }
+//        return sentences;
+//    }
 
     /**
      * Calculate the average sentiment score given a list of scores.

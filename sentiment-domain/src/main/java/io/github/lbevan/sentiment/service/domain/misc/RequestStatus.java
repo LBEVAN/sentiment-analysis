@@ -1,9 +1,11 @@
 package io.github.lbevan.sentiment.service.domain.misc;
 
 public enum  RequestStatus {
+
     REQUESTED("Requested"),
     IN_PROGRESS("In Progress"),
-    COMPLETE("Complete");
+    COMPLETE("Complete"),
+    FAILED("Failed");
 
     private String description;
 

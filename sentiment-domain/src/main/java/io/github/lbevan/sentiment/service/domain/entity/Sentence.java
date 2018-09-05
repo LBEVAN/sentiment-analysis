@@ -1,6 +1,5 @@
 package io.github.lbevan.sentiment.service.domain.entity;
 
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -8,45 +7,43 @@ import org.springframework.data.mongodb.core.mapping.Field;
 /**
  * Model class for a sentence analysis result.
  */
-@JsonDeserialize(using = SentenceDeserializer.class)
 @Document(collection = "sentence")
 public class Sentence extends BaseEntity {
 
-    @Field("sentimentScore")
-    private String sentimentScore;
+    @Field("text")
+    private String text;
 
     @Field("sentiment")
     private String sentiment;
 
-    @Field("sentimentTree")
-    private String sentimentTree;
+    @Field("sentimentScore")
+    private int sentimentScore;
 
     @Field("sentimentDistribution")
-    private Float[] sentimentDistribution;
+    private double[] sentimentDistribution;
 
     /**
      * Constructor.
      *
-     * @param sentimentScore
      * @param sentiment
-     * @param sentimentTree
+     * @param sentimentScore
      * @param sentimentDistribution
      */
     @PersistenceConstructor
-    public Sentence(String sentimentScore, String sentiment, String sentimentTree, Float[] sentimentDistribution) {
-        this.sentimentScore = sentimentScore;
+    public Sentence(String text, String sentiment, int sentimentScore, double[] sentimentDistribution) {
+        this.text = text;
         this.sentiment = sentiment;
-        this.sentimentTree = sentimentTree;
+        this.sentimentScore = sentimentScore;
         this.sentimentDistribution = sentimentDistribution;
     }
 
     /**
-     * Retrieve the sentiment score.
+     * Retrieve the text.
      *
-     * @return String sentiment score
+     * @return String text
      */
-    public String getSentimentScore() {
-        return sentimentScore;
+    public String getText() {
+        return text;
     }
 
     /**
@@ -59,12 +56,12 @@ public class Sentence extends BaseEntity {
     }
 
     /**
-     * Retrieve the sentiment tree.
+     * Retrieve the sentiment score.
      *
-     * @return String sentiment tree
+     * @return String sentiment score
      */
-    public String getSentimentTree() {
-        return sentimentTree;
+    public int getSentimentScore() {
+        return sentimentScore;
     }
 
     /**
@@ -72,7 +69,7 @@ public class Sentence extends BaseEntity {
      *
      * @return Float[] sentiment distribution
      */
-    public Float[] getSentimentDistribution() {
+    public double[] getSentimentDistribution() {
         return sentimentDistribution;
     }
 }

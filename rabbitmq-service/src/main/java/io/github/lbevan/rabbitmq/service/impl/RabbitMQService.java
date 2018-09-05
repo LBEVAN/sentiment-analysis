@@ -19,9 +19,9 @@ public class RabbitMQService {
         this.rabbitMQProperties = rabbitMQProperties;
     }
 
-    public void sendPhraseAnalysisRequest(final TextAnalysisRequestDto request) {
+    public void sendTextAnalysisRequest(final TextAnalysisRequestDto request) {
         rabbitTemplate.convertAndSend(rabbitMQProperties.getExchange(),
-                rabbitMQProperties.getPhraseRequestQueueKey(),
+                rabbitMQProperties.getTextRequestQueueKey(),
                 request);
     }
 

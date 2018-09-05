@@ -29,7 +29,9 @@ public class AnalysisPipe implements Pipe {
             AnalysisResult analysisResult = analysisEngine.calculateSentiment(input);
 
             // add the requestId to the result and add to list of results
-            payload.addResult(new AnalysisResult(analysisResult.getSentences(),
+            payload.addResult(new AnalysisResult(
+                    analysisResult.getText(),
+                    analysisResult.getSentences(),
                     analysisResult.getSentiment(),
                     analysisResult.getSentimentScore(),
                     payload.getRequestId()));

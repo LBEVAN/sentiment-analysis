@@ -3,19 +3,15 @@ package io.github.lbevan.rabbitmq.configuration;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.rabbit.config.RetryInterceptorBuilder;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.rabbit.retry.RejectAndDontRequeueRecoverer;
-import org.springframework.amqp.rabbit.retry.RepublishMessageRecoverer;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
-import org.springframework.retry.interceptor.RetryOperationsInterceptor;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,7 +31,7 @@ public class RabbitMQConfiguration {
     @Bean
     public List<Queue> queues() {
         return Arrays.asList(
-                new Queue(rabbitMQProperties.getPhraseRequestQueue()),
+                new Queue(rabbitMQProperties.getTextRequestQueue()),
                 new Queue(rabbitMQProperties.getTweetRequestQueue())
         );
     }
@@ -43,10 +39,10 @@ public class RabbitMQConfiguration {
     @Bean
     List<Binding> bindings() {
         return Arrays.asList(
-                new Binding(rabbitMQProperties.getPhraseRequestQueue(),
+                new Binding(rabbitMQProperties.getTextRequestQueue(),
                         Binding.DestinationType.QUEUE,
                         rabbitMQProperties.getExchange(),
-                        rabbitMQProperties.getPhraseRequestQueueKey(),
+                        rabbitMQProperties.getTextRequestQueueKey(),
                         null),
                 new Binding(rabbitMQProperties.getTweetRequestQueue(),
                         Binding.DestinationType.QUEUE,

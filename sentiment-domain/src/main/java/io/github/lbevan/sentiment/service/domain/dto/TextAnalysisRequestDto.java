@@ -51,4 +51,13 @@ public class TextAnalysisRequestDto implements AnalysisRequest {
     public String getRequestId() {
         return requestId;
     }
+
+    /**
+     * Set the request id.
+     *
+     * @param requestId the request id to set
+     */
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 }

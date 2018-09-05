@@ -6,18 +6,18 @@ import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 import java.util.LinkedList;
 
 /**
- * A {@link PipelineAdapter} implementation for a single Phrase request.
+ * A {@link PipelineAdapter} implementation for a single Text analysis request.
  */
-public class PhrasePipelineAdapter implements PipelineAdapter {
+public class TextPipelineAdapter implements PipelineAdapter {
 
     private TextAnalysisRequestDto request;
 
     /**
      * Constructor.
      *
-     * @param request the phrase request
+     * @param request the text request
      */
-    public PhrasePipelineAdapter(TextAnalysisRequestDto request) {
+    public TextPipelineAdapter(TextAnalysisRequestDto request) {
         this.request = request;
     }
 
@@ -26,10 +26,10 @@ public class PhrasePipelineAdapter implements PipelineAdapter {
      */
     @Override
     public Payload adapt() {
-        String phrase = request.getText();
+        String text = request.getText();
 
         LinkedList<String> payloadData = new LinkedList<>();
-        payloadData.add(phrase);
+        payloadData.add(text);
 
         return new Payload(request.getRequestId(), payloadData);
     }

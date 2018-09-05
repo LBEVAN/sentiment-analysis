@@ -19,7 +19,7 @@ public class TweetPipelineAdapter implements PipelineAdapter {
     /**
      * Constructor.
      *
-     * @param request the phrase request
+     * @param request the tweet request
      */
     public TweetPipelineAdapter(TweetAnalysisRequestDto request) {
         this.request = request;

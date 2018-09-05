@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum AnalysisType {
 
-    PHRASE("Phrase", "PHRASE", "Analyse a piece of text"),
+    TEXT("Text", "TEXT", "Analyse a piece of text"),
     TWITTER_TWEET("Twitter - Tweet", "TWITTER_TWEET", "Analyse a single Tweet");
 
     private String name;

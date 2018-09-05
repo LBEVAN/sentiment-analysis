@@ -37,4 +37,14 @@ public enum Sentiment {
     public static String getDescriptionByScore(float score) {
         return Sentiment.values()[Math.round(score)].description;
     }
+    /**
+     * Retrieve the description of a sentiment based on the given score.
+     *
+     * @param score
+     * @return String description
+     */
+    public static String getDescriptionByScore(int score) {
+        return Sentiment.values()[score].description;
+    }
+
 }

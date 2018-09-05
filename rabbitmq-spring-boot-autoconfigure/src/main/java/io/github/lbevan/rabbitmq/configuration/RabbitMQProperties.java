@@ -17,11 +17,11 @@ public class RabbitMQProperties {
     @Value("${rabbitmq.exchange}")
     private String exchange;
 
-    @Value("${rabbitmq.queue.request.phrase}")
-    private String phraseRequestQueue;
+    @Value("${rabbitmq.queue.request.text}")
+    private String textRequestQueue;
 
-    @Value("${rabbitmq.queue.request.phrase.key}")
-    private String phraseRequestQueueKey;
+    @Value("${rabbitmq.queue.request.text.key}")
+    private String textRequestQueueKey;
 
     @Value("${rabbitmq.queue.request.tweet}")
     private String tweetRequestQueue;
@@ -42,12 +42,12 @@ public class RabbitMQProperties {
         return exchange;
     }
 
-    public String getPhraseRequestQueue() {
-        return phraseRequestQueue;
+    public String getTextRequestQueue() {
+        return textRequestQueue;
     }
 
-    public String getPhraseRequestQueueKey() {
-        return phraseRequestQueueKey;
+    public String getTextRequestQueueKey() {
+        return textRequestQueueKey;
     }
 
     public String getTweetRequestQueue() {

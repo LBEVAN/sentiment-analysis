@@ -16,6 +16,9 @@ import java.util.List;
 @Document(collection = "analysisResult")
 public class AnalysisResult extends BaseEntity {
 
+    @Field("text")
+    private String text;
+
     @DBRef
     @CascadeSave
     private List<Sentence> sentences;
@@ -37,7 +40,8 @@ public class AnalysisResult extends BaseEntity {
      * @param averageSentimentScore
      */
     @PersistenceConstructor
-    public AnalysisResult(List<Sentence> sentences, String averageSentiment, float averageSentimentScore, String requestId) {
+    public AnalysisResult(String text, List<Sentence> sentences, String averageSentiment, float averageSentimentScore, String requestId) {
+        this.text = text;
         this.sentences = sentences;
         this.averageSentiment = averageSentiment;
         this.averageSentimentScore = averageSentimentScore;
@@ -51,10 +55,20 @@ public class AnalysisResult extends BaseEntity {
      * @param averageSentiment
      * @param averageSentimentScore
      */
-    public AnalysisResult(List<Sentence> sentences, String averageSentiment, float averageSentimentScore) {
+    public AnalysisResult(String text, List<Sentence> sentences, String averageSentiment, float averageSentimentScore) {
+        this.text = text;
         this.sentences = sentences;
         this.averageSentiment = averageSentiment;
         this.averageSentimentScore = averageSentimentScore;
+    }
+
+    /**
+     * Retrieve the text.
+     *
+     * @return String text
+     */
+    public String getText() {
+        return text;
     }
 
     /**

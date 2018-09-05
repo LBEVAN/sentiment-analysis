@@ -66,6 +66,8 @@ public class AnalysisRequestController {
             @RequestBody TextAnalysisRequestDto request) {
         UUID requestId = UUIDGenerator.generateUUID();
 
+        request.setRequestId(requestId.toString());
+
         AnalysisRequestEntity analysisRequestEntity = new AnalysisRequestEntity(
                 requestId.toString(),
                 RequestStatus.REQUESTED,
@@ -78,7 +80,7 @@ public class AnalysisRequestController {
             System.out.println(e);
         }
 
-//        rabbitMQService.sendPhraseAnalysisRequest(new TextAnalysisRequestDto(request.getData(), requestId.toString()));
+        rabbitMQService.sendTextAnalysisRequest(request);
 
         return new ResponseEntity<>(new AnalysisRequestResponseDto(requestId.toString()), HttpStatus.OK);
     }

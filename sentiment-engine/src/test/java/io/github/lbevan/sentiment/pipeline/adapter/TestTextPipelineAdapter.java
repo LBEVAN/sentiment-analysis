@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test class for {@link PhrasePipelineAdapter}.
+ * Test class for {@link TextPipelineAdapter}.
  */
-public class TestPhrasePipelineAdapter {
+public class TestTextPipelineAdapter {
 
     @Test
     public void whenAdapterExecuted_thenRequestProcessedIntoPayload() {
         TextAnalysisRequestDto request = new TextAnalysisRequestDto("My phrase");
-        PhrasePipelineAdapter adapter = new PhrasePipelineAdapter(request);
+        TextPipelineAdapter adapter = new TextPipelineAdapter(request);
 
         Payload payload = adapter.adapt();
 

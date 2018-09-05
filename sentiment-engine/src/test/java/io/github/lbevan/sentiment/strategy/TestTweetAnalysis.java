@@ -1,5 +1,6 @@
 package io.github.lbevan.sentiment.strategy;
 
+import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
 import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
@@ -15,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -42,6 +44,10 @@ public class TestTweetAnalysis {
     @Autowired
     private SpringBeanUtil springBeanUtil;
 
+    @MockBean
+    private AnalysisRequestRepository analysisRequestRepository;
+
+    @MockBean
     private AnalysisResultRepository analysisResultRepository;
 
     @BeforeEach
@@ -51,14 +57,13 @@ public class TestTweetAnalysis {
         Mockito.when(twitterService.getTweetById("1017825387785719808"))
                 .thenReturn(new Tweet(new Long(000001), "I love Monday mornings!"));
         springBeanUtil.setApplicationContext(context);
-        analysisResultRepository = mock(AnalysisResultRepository.class);
     }
 
     @Test
     public void whenRequestReceived_thenRequestIsProcessedAndResultIsReturned() {
         TweetAnalysisRequestDto request = new TweetAnalysisRequestDto("1017825387785719808");
 
-        new TweetAnalysis(analysisResultRepository).receiveRequest(request);
+        new TweetAnalysis(analysisRequestRepository, analysisResultRepository).receiveRequest(request);
 
         ArgumentCaptor<List<AnalysisResult>> captor = ArgumentCaptor.forClass(List.class);
         verify(analysisResultRepository).saveAll(captor.capture());

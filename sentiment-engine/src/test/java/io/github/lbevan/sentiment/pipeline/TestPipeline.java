@@ -2,7 +2,7 @@ package io.github.lbevan.sentiment.pipeline;
 
 import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
-import io.github.lbevan.sentiment.pipeline.adapter.PhrasePipelineAdapter;
+import io.github.lbevan.sentiment.pipeline.adapter.TextPipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.adapter.PipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.AnalysisPipe;
 import io.github.lbevan.sentiment.pipeline.pipe.Pipe;
@@ -48,7 +48,7 @@ public class TestPipeline {
             TextAnalysisRequestDto request = new TextAnalysisRequestDto("This is my 1st sentence. This is my second!");
 
             List<AnalysisResult> results = new Pipeline.PipelineBuilder()
-                    .adapt(new PhrasePipelineAdapter(request))
+                    .adapt(new TextPipelineAdapter(request))
                     .pipe(new AnalysisPipe())
                     .build()
                     .process();
