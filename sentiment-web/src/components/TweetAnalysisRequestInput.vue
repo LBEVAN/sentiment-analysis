@@ -1,6 +1,6 @@
 <template id="tweet-analysis-request-input">
   <form @submit.prevent="submit">
-    <p>Enter the link of the tweet to be analysed:</p>
+    <p class="mt-3"><b>Enter the link of the tweet to be analysed:</b></p>
 
     <div class="input-group mb-3">
       <div class="input-group-prepend">

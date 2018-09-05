@@ -36,6 +36,14 @@ export default {
   text-align: center;
 }
 
+.wrapper-65 {
+  margin: auto;
+  width: 65%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .section {
   margin-top: 5vh;
   margin-bottom: 5vh;
