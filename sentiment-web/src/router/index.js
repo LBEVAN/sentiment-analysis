@@ -3,10 +3,12 @@ import Router from 'vue-router'
 import CreateAnalysisRequest from '@/components/CreateAnalysisRequest'
 import ViewAnalysisRequest from '@/components/ViewAnalysisRequest'
 import PageNotFound from '@/components/PageNotFound'
+import ServiceError from '@/components/ServiceError'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -17,6 +19,10 @@ export default new Router({
       path: '/request/:id',
       name: 'ViewAnalysisRequest',
       component: ViewAnalysisRequest
+    },
+    {
+      path: '/service-error',
+      component: ServiceError
     },
     {
       path: '/404',

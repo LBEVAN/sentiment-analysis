@@ -117,20 +117,12 @@
             .then((response) => {
               this.analysisRequest = response
             })
-            .catch((error) => {
-              clearInterval()
-              this.$router.push({path: '/404'})
-            })
         }
 
         if(this.results === null) {
           api.getResultsByRequestId(this.$route.params.id)
             .then((response) => {
               this.results = response
-            })
-            .catch((error) => {
-              clearInterval()
-              this.$router.push({path: '/404'})
             })
         }
       },

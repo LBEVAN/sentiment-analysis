@@ -32,9 +32,6 @@
           .then((response) => {
             this.$router.push({ name: 'ViewAnalysisRequest', params: { id: response.requestId } })
           })
-          .catch((error) => {
-            this.$router.push({path: '/404'})
-          })
       }
     }
   }

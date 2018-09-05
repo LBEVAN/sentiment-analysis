@@ -13,7 +13,12 @@ export default {
     }
 
     return client.post('/request/text', data)
-      .then(response => { return response.data })
+      .then(response => {
+        return response.data
+      })
+      .catch(error => {
+        this.handleError(error)
+      })
   },
 
   createTweetAnalysisRequest (tweetId) {
@@ -22,7 +27,12 @@ export default {
     }
 
     return client.post('/request/tweet', data)
-      .then(response => { return response.data })
+      .then(response => {
+        return response.data
+      })
+      .catch(error => {
+        this.handleError(error)
+      })
   },
 
   getRequestById (id) {
@@ -31,8 +41,7 @@ export default {
         return response.data
       })
       .catch(error => {
-        console.log(error)
-        throw error
+        this.handleError(error)
       })
   },
 
@@ -42,8 +51,33 @@ export default {
         return response.data
       })
       .catch(error => {
-        console.log(error)
-        throw error
+        this.handleError(error)
       })
+  },
+
+  handleError (error) {
+    // log the error
+    console.log(error)
+    clearInterval()
+
+    // first check we actually got a response
+    if(error.response == null) {
+      // check for networking errors
+      if(error.message === 'Network Error') {
+        // network error - redirect service error page
+        window.location.replace("/service-error");
+      }
+    } else {
+      // now check logical error codes
+      if(error.response.status == "404") {
+        // redirect to page not found
+        window.location.replace("/404");
+      } else if(error.response.status == '500') {
+        window.location.replace("/service-error")
+      } else {
+        // allow the client to handle it
+        throw error
+      }
+    }
   }
 }

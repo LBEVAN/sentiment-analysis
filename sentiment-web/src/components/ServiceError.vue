@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <h1 class="display-2">Page Not Found</h1>
-    <h3 class="display-5">The page you requested could not be found</h3>
+    <h1 class="display-2">Service Error</h1>
+    <h3 class="display-5">We are currently experiencing issues. Please try again at a later time.</h3>
 
     <div class="section">
       <form @submit.prevent="submit">
@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: 'PageNotFound',
+    name: 'ServiceError',
     methods: {
       submit: function () {
         this.$router.push({ name: 'CreateAnalysisRequest'})
