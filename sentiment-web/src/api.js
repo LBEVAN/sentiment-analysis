@@ -31,6 +31,18 @@ export default {
         return response.data
       })
       .catch(error => {
+        console.log(error)
+        throw error
+      })
+  },
+
+  getResultsByRequestId (id) {
+    return client.get('/results/' + id)
+      .then(response => {
+        return response.data
+      })
+      .catch(error => {
+        console.log(error)
         throw error
       })
   }
