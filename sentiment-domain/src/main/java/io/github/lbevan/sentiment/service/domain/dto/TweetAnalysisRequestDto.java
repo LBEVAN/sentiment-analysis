@@ -10,36 +10,36 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TweetAnalysisRequestDto implements AnalysisRequest {
 
-    private String tweetId;
+    private String tweetLink;
     private String requestId;
 
     /**
      * Constructor.
      *
-     * @param tweetId id of the tweet to process
+     * @param tweetLink id of the tweet to process
      */
     @JsonCreator
-    public TweetAnalysisRequestDto(@JsonProperty("tweetId") String tweetId) {
-        this.tweetId = tweetId;
+    public TweetAnalysisRequestDto(@JsonProperty("tweetLink") String tweetLink) {
+        this.tweetLink = tweetLink;
     }
 
     /**
      * Constructor.
      *
-     * @param tweetId id of the tweet to process
+     * @param tweetLink link of the tweet to process
      */
-    public TweetAnalysisRequestDto(String tweetId, String requestId) {
-        this.tweetId = tweetId;
+    public TweetAnalysisRequestDto(String tweetLink, String requestId) {
+        this.tweetLink = tweetLink;
         this.requestId = requestId;
     }
 
     /**
      * Retrieve the tweet id.
      *
-     * @return String tweetId
+     * @return String tweetLink
      */
-    public String getTweetId() {
-        return tweetId;
+    public String getTweetLink() {
+        return tweetLink;
     }
 
     /**
@@ -49,5 +49,14 @@ public class TweetAnalysisRequestDto implements AnalysisRequest {
      */
     public String getRequestId() {
         return requestId;
+    }
+
+    /**
+     * Set the request id.
+     *
+     * @param requestId the request id to set
+     */
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 }

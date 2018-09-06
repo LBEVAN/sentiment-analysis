@@ -31,13 +31,22 @@ public class TweetPipelineAdapter implements PipelineAdapter {
      */
     @Override
     public Payload adapt() {
-        // todo: pre-validation? is it still available? throw exception if not?
-
-        Tweet tweet = twitterService.getTweetById(request.getTweetId());
+        final String tweetId = getTweetIdFromLink(request.getTweetLink());
+        Tweet tweet = twitterService.getTweetById(tweetId);
 
         LinkedList<String> payloadData = new LinkedList<>();
         payloadData.add(tweet.getText());
 
         return new Payload(request.getRequestId(), payloadData);
+    }
+
+    /**
+     * Get the tweet id from the specified link.
+     *
+     * @param tweetLink link to search
+     */
+    private String getTweetIdFromLink(final String tweetLink) {
+        // get the tweet id which is the data after last slash
+        return tweetLink.substring(tweetLink.lastIndexOf("/") + 1).trim();
     }
 }

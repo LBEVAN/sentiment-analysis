@@ -3,10 +3,7 @@
     <p class="mt-3"><b>Enter the link of the tweet to be analysed:</b></p>
 
     <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">https://twitter.com/</span>
-      </div>
-      <input type="text" class="form-control" id="tweet-url" aria-describedby="basic-addon3" placeholder="example/status/1035866523569549313" required v-model="tweetId">
+      <input type="text" class="form-control" id="tweet-link" aria-describedby="basic-addon3" placeholder="https://twitter.com/example/status/1035866523569549313" required v-model="tweetLink">
     </div>
 
     <button type="submit" class="btn btn-primary">Start Analysis</button>
@@ -21,14 +18,15 @@ export default {
   template: 'tweet-analysis-request-input',
   data() {
     return {
-      tweetId: null
+      tweetLink: null
     }
   },
   methods: {
     submit: function () {
-      api.createTweetAnalysisRequest(this.tweetId)
-
-      // this.$router.push('path-to-go')
+      api.createTweetAnalysisRequest(this.tweetLink)
+        .then((response) => {
+          this.$router.push({ name: 'ViewAnalysisRequest', params: { id: response.requestId } })
+        })
     }
   }
 }

@@ -21,7 +21,7 @@ public class Tweet {
      */
     @JsonCreator
     public Tweet(@JsonProperty("id") Long id,
-                 @JsonProperty("text") String text) {
+                 @JsonProperty("full_text") String text) {
         this.id = id;
         this.text = text;
     }

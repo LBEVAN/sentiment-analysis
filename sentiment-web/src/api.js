@@ -2,7 +2,10 @@ import axios from 'axios'
 
 const client = axios.create({
   baseURL: 'http://localhost:9200/api',
-  json: true
+  json: true,
+  headers: {
+    "Access-Control-Allow-Origin": "*"
+  }
 })
 
 export default {
@@ -21,9 +24,9 @@ export default {
       })
   },
 
-  createTweetAnalysisRequest (tweetId) {
+  createTweetAnalysisRequest (tweetLink) {
     var data = {
-      data: tweetId
+      tweetLink: tweetLink
     }
 
     return client.post('/request/tweet', data)

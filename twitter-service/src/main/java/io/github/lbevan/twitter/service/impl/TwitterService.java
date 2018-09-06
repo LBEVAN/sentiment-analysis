@@ -25,7 +25,7 @@ public class TwitterService {
      * @return Tweet
      */
     public Tweet getTweetById(final String id) {
-        Tweet tweet = twitterRestTemplate.getForObject(BASE_API + "statuses/show.json?id=" + id, Tweet.class);
+        Tweet tweet = twitterRestTemplate.getForObject(BASE_API + "statuses/show.json?id=" + id + "&tweet_mode=extended", Tweet.class);
         return tweet;
     }
 }

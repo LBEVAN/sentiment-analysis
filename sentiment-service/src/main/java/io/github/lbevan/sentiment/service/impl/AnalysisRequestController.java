@@ -8,8 +8,11 @@ import io.github.lbevan.sentiment.service.domain.AnalysisType;
 import io.github.lbevan.sentiment.service.domain.dto.AnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.dto.AnalysisRequestResponseDto;
 import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
+import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisRequestEntity;
 import io.github.lbevan.sentiment.service.domain.misc.RequestStatus;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +30,8 @@ import java.util.UUID;
         produces = "application/json")
 @CrossOrigin
 public class AnalysisRequestController {
+
+    private static final Log LOGGER = LogFactory.getLog(AnalysisRequestController.class);
 
     private final AnalysisRequestRepository analysisRequestRepository;
     private final RabbitMQService rabbitMQService;
@@ -59,7 +64,8 @@ public class AnalysisRequestController {
     /**
      * REST API Endpoint. Request analysis of a of piece of text.
      *
-     * @return ResponseEntity<UUID>
+     * @param request the text analysis request
+     * @return ResponseEntity<AnalysisRequestResponseDto>
      */
     @PostMapping(value = "/text", headers = { "accept=application/json", "content-type=application/json" })
     public ResponseEntity<AnalysisRequestResponseDto> createTextAnalysisRequest(
@@ -74,13 +80,35 @@ public class AnalysisRequestController {
                 Instant.now(),
                 ImmutableMap.of("Text", request.getText()));
 
-        try {
-            analysisRequestEntity = analysisRequestRepository.save(analysisRequestEntity);
-        } catch(Exception e) {
-            System.out.println(e);
-        }
+        analysisRequestRepository.save(analysisRequestEntity);
 
         rabbitMQService.sendTextAnalysisRequest(request);
+
+        return new ResponseEntity<>(new AnalysisRequestResponseDto(requestId.toString()), HttpStatus.OK);
+    }
+
+    /**
+     * REST API Endpoint. Request analysis of a single tweet.
+     *
+     * @param request the tweet analysis request
+     * @return ResponseEntity<AnalysisRequestResponseDto>
+     */
+    @PostMapping(value = "/tweet", headers = { "accept=application/json", "content-type=application/json" })
+    public ResponseEntity<AnalysisRequestResponseDto> createTweetAnalysisRequest(
+            @RequestBody TweetAnalysisRequestDto request) {
+        UUID requestId = UUIDGenerator.generateUUID();
+
+        request.setRequestId(requestId.toString());
+
+        AnalysisRequestEntity analysisRequestEntity = new AnalysisRequestEntity(
+                requestId.toString(),
+                RequestStatus.REQUESTED,
+                Instant.now(),
+                ImmutableMap.of("Tweet Link", request.getTweetLink()));
+
+        analysisRequestRepository.save(analysisRequestEntity);
+
+        rabbitMQService.sendTweetAnalysisRequest(request);
 
         return new ResponseEntity<>(new AnalysisRequestResponseDto(requestId.toString()), HttpStatus.OK);
     }
