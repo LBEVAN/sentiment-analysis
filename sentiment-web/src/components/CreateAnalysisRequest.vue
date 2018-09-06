@@ -24,9 +24,7 @@
       <div class="col">
         <search-for-request/>
       </div>
-
     </div>
-
   </div>
 </template>
 

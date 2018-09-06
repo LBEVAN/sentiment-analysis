@@ -47,13 +47,25 @@
       </div>
     </div>
 
-    <div class="card mt-4 text-left" v-for="(result, index) in results">
+    <div class="card mt-4 text-left" :id="getIdWithIndex('', 'result', resultIndex)" v-for="(result, resultIndex) in results">
       <div class="card-header">
-        <h4 >Analysis Result {{ index + 1 }}</h4>
-        <p><b>Text:</b> {{ result.text }}</p>
+        <h4 >Analysis Result {{ resultIndex + 1 }}</h4>
+        <div class="row">
+          <div class="col">
+            <p><b>Text:</b> {{ result.text }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><b>Overall Sentiment:</b> {{ result.sentiment }}</p>
+          </div>
+          <div class="col">
+            <p><b>Overall Sentiment Score:</b> {{ result.sentimentScore }}</p>
+          </div>
+        </div>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" v-for="(sentence, index) in result.sentences">
+        <li class="list-group-item sentence" v-for="(sentence, sentenceIndex) in result.sentences" :id="getIdWithIndex('', 'sentence', sentenceIndex)">
           <div class="row">
             <div class="col">
               <p>{{ sentence.text }}</p>
@@ -67,6 +79,17 @@
               <p><b>Sentiment Score:</b> {{ sentence.sentimentScore }}</p>
             </div>
           </div>
+          <div class="row float-right">
+            <button class="btn btn-primary btn-sm" data-toggle="collapse" :data-target="getIdWithIndex('#', 'collapse-sentence', sentenceIndex)" aria-expanded="true"
+              :aria-controls="getIdWithIndex('', 'collapse-sentence', sentenceIndex)">
+              View Distribution
+            </button>
+          </div>
+          <div :id="getIdWithIndex('', 'collapse-sentence', sentenceIndex)" class="row collapse collapsed" :data-parent="getIdWithIndex('#', 'result', resultIndex)">
+            <div class="col">
+              <sentiment-distribution-chart :id="getIdWithIndex('', 'pie', sentenceIndex)" :values="sentence.sentimentDistribution"/>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -75,9 +98,13 @@
 
 <script>
   import api from '@/api'
+  import SentimentDistributionChart from '@/components/SentimentDistributionChart'
 
   export default {
     name: 'ViewAnalysisRequest',
+    components: {
+      'sentiment-distribution-chart': SentimentDistributionChart
+    },
     data() {
       return {
         analysisRequest: null,
@@ -137,3 +164,9 @@
     }
   }
 </script>
+
+<style>
+  .sentence {
+    font-size: 0.75em;
+  }
+</style>
