@@ -105,7 +105,7 @@
     components: {
       'sentiment-distribution-chart': SentimentDistributionChart
     },
-    data() {
+    data: function () {
       return {
         analysisRequest: null,
         results: null
@@ -117,11 +117,12 @@
 
       // set up a continuous call until the data
       // is loaded or the request has failed
-      setInterval(() => this.intervalLoad(), 3000)
+      // setInterval(() => this.intervalLoad, 3000)
+      this.interval = setInterval(() => this.intervalLoad(), 3000)
     },
     computed: {
       isDataLoaded: function () {
-        if(this.analysisRequest === null || (this.results === null && this.analysisRequest.status !== 'Failed')) {
+        if(this.analysisRequest == null || ((this.results == null) && this.analysisRequest.status != 'Failed')) {
           return false
         } else {
           return true
@@ -130,8 +131,9 @@
     },
     methods: {
       intervalLoad: function () {
+        console.log('intervalLoad')
         if(this.isDataLoaded) {
-          clearInterval()
+          clearInterval(this.interval)
         } else {
           this.loadData()
         }
@@ -149,7 +151,9 @@
         if(this.results === null) {
           api.getResultsByRequestId(this.$route.params.id)
             .then((response) => {
-              this.results = response
+              if(response.length !== 0) {
+                this.results = response
+              }
             })
         }
       },
