@@ -38,6 +38,20 @@ export default {
       })
   },
 
+  createHashtagAnalysisRequest (hashtag) {
+    var data = {
+      hashtag: hashtag
+    }
+
+    return client.post('/request/hashtag', data)
+      .then(response => {
+        return response.data
+      })
+      .catch(error => {
+        this.handleError(error)
+      })
+  },
+
   getRequestById (id) {
     return client.get('/request/' + id)
       .then(response => {

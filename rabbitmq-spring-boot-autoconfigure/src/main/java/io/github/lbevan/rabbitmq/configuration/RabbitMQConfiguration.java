@@ -32,7 +32,8 @@ public class RabbitMQConfiguration {
     public List<Queue> queues() {
         return Arrays.asList(
                 new Queue(rabbitMQProperties.getTextRequestQueue()),
-                new Queue(rabbitMQProperties.getTweetRequestQueue())
+                new Queue(rabbitMQProperties.getTweetRequestQueue()),
+                new Queue(rabbitMQProperties.getHashtagRequestQueue())
         );
     }
 
@@ -48,6 +49,11 @@ public class RabbitMQConfiguration {
                         Binding.DestinationType.QUEUE,
                         rabbitMQProperties.getExchange(),
                         rabbitMQProperties.getTweetRequestQueueKey(),
+                        null),
+                new Binding(rabbitMQProperties.getHashtagRequestQueue(),
+                        Binding.DestinationType.QUEUE,
+                        rabbitMQProperties.getExchange(),
+                        rabbitMQProperties.getHashtagRequestQueueKey(),
                         null)
         );
     }

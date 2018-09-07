@@ -5,10 +5,7 @@ import io.github.lbevan.rabbitmq.service.impl.RabbitMQService;
 import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
 import io.github.lbevan.sentiment.service.Util.UUIDGenerator;
 import io.github.lbevan.sentiment.service.domain.AnalysisType;
-import io.github.lbevan.sentiment.service.domain.dto.AnalysisRequestDto;
-import io.github.lbevan.sentiment.service.domain.dto.AnalysisRequestResponseDto;
-import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
-import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
+import io.github.lbevan.sentiment.service.domain.dto.*;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisRequestEntity;
 import io.github.lbevan.sentiment.service.domain.misc.RequestStatus;
 import org.apache.commons.logging.Log;
@@ -109,6 +106,32 @@ public class AnalysisRequestController {
         analysisRequestRepository.save(analysisRequestEntity);
 
         rabbitMQService.sendTweetAnalysisRequest(request);
+
+        return new ResponseEntity<>(new AnalysisRequestResponseDto(requestId.toString()), HttpStatus.OK);
+    }
+
+    /**
+     * REST API Endpoint. Request analysis of a set of tweets that include teh specified hashtag.
+     *
+     * @param request the hashtag analysis request
+     * @return ResponseEntity<AnalysisRequestResponseDto>
+     */
+    @PostMapping(value = "/hashtag", headers = { "accept=application/json", "content-type=application/json" })
+    public ResponseEntity<AnalysisRequestResponseDto> createHashtagAnalysisRequest(
+            @RequestBody HashtagAnalysisRequestDto request) {
+        UUID requestId = UUIDGenerator.generateUUID();
+
+        request.setRequestId(requestId.toString());
+
+        AnalysisRequestEntity analysisRequestEntity = new AnalysisRequestEntity(
+                requestId.toString(),
+                RequestStatus.REQUESTED,
+                Instant.now(),
+                ImmutableMap.of("Hashtag", request.getHashtag()));
+
+        analysisRequestRepository.save(analysisRequestEntity);
+
+        rabbitMQService.sendHashtagAnalysisRequest(request);
 
         return new ResponseEntity<>(new AnalysisRequestResponseDto(requestId.toString()), HttpStatus.OK);
     }

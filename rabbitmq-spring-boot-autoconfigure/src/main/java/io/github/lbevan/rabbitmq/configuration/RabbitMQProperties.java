@@ -29,6 +29,12 @@ public class RabbitMQProperties {
     @Value("${rabbitmq.queue.request.tweet.key}")
     private String tweetRequestQueueKey;
 
+    @Value("${rabbitmq.queue.request.hashtag}")
+    private String hashtagRequestQueue;
+
+    @Value("${rabbitmq.queue.request.hashtag.key}")
+    private String hashtagRequestQueueKey;
+
 
     public String getHost() {
         return host;
@@ -56,5 +62,13 @@ public class RabbitMQProperties {
 
     public String getTweetRequestQueueKey() {
         return tweetRequestQueueKey;
+    }
+
+    public String getHashtagRequestQueue() {
+        return hashtagRequestQueue;
+    }
+
+    public String getHashtagRequestQueueKey() {
+        return hashtagRequestQueueKey;
     }
 }
