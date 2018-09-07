@@ -15,6 +15,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -72,6 +73,7 @@ public class AnalysisRequestController {
      * @return ResponseEntity<AnalysisRequestResponseDto>
      */
     @PostMapping(value = "/text", headers = { "accept=application/json", "content-type=application/json" })
+    @Transactional
     public ResponseEntity<AnalysisRequestResponseDto> createTextAnalysisRequest(
             @RequestBody TextAnalysisRequestDto request) {
         UUID requestId = UUIDGenerator.generateUUID();
@@ -98,6 +100,7 @@ public class AnalysisRequestController {
      * @return ResponseEntity<AnalysisRequestResponseDto>
      */
     @PostMapping(value = "/tweet", headers = { "accept=application/json", "content-type=application/json" })
+    @Transactional
     public ResponseEntity<AnalysisRequestResponseDto> createTweetAnalysisRequest(
             @RequestBody TweetAnalysisRequestDto request) {
         UUID requestId = UUIDGenerator.generateUUID();
@@ -124,6 +127,7 @@ public class AnalysisRequestController {
      * @return ResponseEntity<AnalysisRequestResponseDto>
      */
     @PostMapping(value = "/hashtag", headers = { "accept=application/json", "content-type=application/json" })
+    @Transactional
     public ResponseEntity<AnalysisRequestResponseDto> createHashtagAnalysisRequest(
             @RequestBody HashtagAnalysisRequestDto request) {
         UUID requestId = UUIDGenerator.generateUUID();
@@ -150,6 +154,7 @@ public class AnalysisRequestController {
      * @return ResponseEntity<AnalysisRequestResponseDto>
      */
     @PostMapping(value = "/document", headers = { "accept=application/json", "content-type=multipart/form-data" })
+    @Transactional
     public ResponseEntity<AnalysisRequestResponseDto> createHashtagAnalysisRequest(@RequestParam("document") MultipartFile document) throws IOException {
         UUID requestId = UUIDGenerator.generateUUID();
 
