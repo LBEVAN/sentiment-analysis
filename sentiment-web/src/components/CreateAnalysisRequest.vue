@@ -33,6 +33,7 @@ import ButtonToggleGroup from '@/components/ButtonToggleGroup'
 import TextAnalysisRequestInput from '@/components/TextAnalysisRequestInput'
 import TweetAnalysisRequestInput from '@/components/TweetAnalysisRequestInput'
 import HashtagAnalysisRequestInput from '@/components/HashtagAnalysisRequestInput'
+import DocumentAnalysisRequestInput from '@/components/DocumentAnalysisRequestInput'
 import SearchForRequest from '@/components/SearchForRequest'
 
 export default {
@@ -42,18 +43,20 @@ export default {
     'search-for-request': SearchForRequest,
     'text-input': TextAnalysisRequestInput,
     'tweet-input': TweetAnalysisRequestInput,
-    'hashtag-input': HashtagAnalysisRequestInput
+    'hashtag-input': HashtagAnalysisRequestInput,
+    'document-input': DocumentAnalysisRequestInput
   },
   data () {
     return {
       options: [
         { name: 'Text', component: 'text-input' },
         { name: 'Twitter - Tweet', component: 'tweet-input' },
-        { name: 'Twitter - Hashtag', component: 'hashtag-input' }
+        { name: 'Twitter - Hashtag', component: 'hashtag-input' },
+        { name: 'Document', component: 'document-input' }
       ],
       chosenOption: null,
       currentComponent: null,
-      componentsArray: ['text-input', 'tweet-input', 'hashtag-input']
+      componentsArray: ['text-input', 'tweet-input', 'hashtag-input', 'document-input']
     }
   },
   methods: {

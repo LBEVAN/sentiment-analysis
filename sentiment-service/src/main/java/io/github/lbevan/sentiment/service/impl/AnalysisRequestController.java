@@ -3,10 +3,12 @@ package io.github.lbevan.sentiment.service.impl;
 import com.google.common.collect.ImmutableMap;
 import io.github.lbevan.rabbitmq.service.impl.RabbitMQService;
 import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
+import io.github.lbevan.sentiment.repository.impl.DocumentRepository;
 import io.github.lbevan.sentiment.service.Util.UUIDGenerator;
 import io.github.lbevan.sentiment.service.domain.AnalysisType;
 import io.github.lbevan.sentiment.service.domain.dto.*;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisRequestEntity;
+import io.github.lbevan.sentiment.service.domain.misc.DocumentType;
 import io.github.lbevan.sentiment.service.domain.misc.RequestStatus;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -14,7 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -31,6 +35,7 @@ public class AnalysisRequestController {
     private static final Log LOGGER = LogFactory.getLog(AnalysisRequestController.class);
 
     private final AnalysisRequestRepository analysisRequestRepository;
+    private final DocumentRepository documentRepository;
     private final RabbitMQService rabbitMQService;
 
     /**
@@ -41,8 +46,10 @@ public class AnalysisRequestController {
      */
     @Autowired
     public AnalysisRequestController(AnalysisRequestRepository analysisRequestRepository,
+                                     DocumentRepository documentRepository,
                                      RabbitMQService rabbitMQService) {
         this.analysisRequestRepository = analysisRequestRepository;
+        this.documentRepository = documentRepository;
         this.rabbitMQService = rabbitMQService;
     }
 
@@ -132,6 +139,38 @@ public class AnalysisRequestController {
         analysisRequestRepository.save(analysisRequestEntity);
 
         rabbitMQService.sendHashtagAnalysisRequest(request);
+
+        return new ResponseEntity<>(new AnalysisRequestResponseDto(requestId.toString()), HttpStatus.OK);
+    }
+
+    /**
+     * REST API Endpoint. Request analysis of a document.
+     *
+     * @param document the multipart document
+     * @return ResponseEntity<AnalysisRequestResponseDto>
+     */
+    @PostMapping(value = "/document", headers = { "accept=application/json", "content-type=multipart/form-data" })
+    public ResponseEntity<AnalysisRequestResponseDto> createHashtagAnalysisRequest(@RequestParam("document") MultipartFile document) throws IOException {
+        UUID requestId = UUIDGenerator.generateUUID();
+
+        String documentId = documentRepository.save(document.getInputStream(), document.getOriginalFilename(), document.getContentType());
+
+        AnalysisRequestEntity analysisRequestEntity = new AnalysisRequestEntity(
+                requestId.toString(),
+                RequestStatus.REQUESTED,
+                Instant.now(),
+                ImmutableMap.of(
+                        "Document name", document.getOriginalFilename(),
+                        "Content type", document.getContentType(),
+                        "Document size", document.getSize()
+                ));
+
+        analysisRequestRepository.save(analysisRequestEntity);
+
+        DocumentAnalysisRequestDto request = new DocumentAnalysisRequestDto(requestId.toString(),
+                documentId,
+                DocumentType.getFromContentType(document.getContentType()));
+        rabbitMQService.sendDocumentAnalysisRequest(request);
 
         return new ResponseEntity<>(new AnalysisRequestResponseDto(requestId.toString()), HttpStatus.OK);
     }

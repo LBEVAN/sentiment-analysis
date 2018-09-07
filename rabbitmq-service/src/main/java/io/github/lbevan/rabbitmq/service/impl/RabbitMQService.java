@@ -1,6 +1,7 @@
 package io.github.lbevan.rabbitmq.service.impl;
 
 import io.github.lbevan.rabbitmq.configuration.RabbitMQProperties;
+import io.github.lbevan.sentiment.service.domain.dto.DocumentAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.dto.HashtagAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
@@ -35,6 +36,12 @@ public class RabbitMQService {
     public void sendHashtagAnalysisRequest(final HashtagAnalysisRequestDto request) {
         rabbitTemplate.convertAndSend(rabbitMQProperties.getExchange(),
                 rabbitMQProperties.getHashtagRequestQueueKey(),
+                request);
+    }
+
+    public void sendDocumentAnalysisRequest(final DocumentAnalysisRequestDto request) {
+        rabbitTemplate.convertAndSend(rabbitMQProperties.getExchange(),
+                rabbitMQProperties.getDocumentRequestQueueKey(),
                 request);
     }
 }

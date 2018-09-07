@@ -52,6 +52,17 @@ export default {
       })
   },
 
+  createDocumentAnalysisRequest (formData) {
+    return client.post(
+      '/request/document', formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+      .then(response => {
+        return response.data
+      })
+      .catch(error => {
+        this.handleError(error)
+      })
+  },
+
   getRequestById (id) {
     return client.get('/request/' + id)
       .then(response => {

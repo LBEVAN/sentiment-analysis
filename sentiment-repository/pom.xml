@@ -30,6 +30,14 @@
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
         <!-- End Spring Dependencies -->
+
+        <!-- Util Dependencies -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>26.0-jre</version>
+        </dependency>
+        <!-- End Util Dependenies -->
     </dependencies>
 
     <build>

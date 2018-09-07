@@ -35,6 +35,12 @@ public class RabbitMQProperties {
     @Value("${rabbitmq.queue.request.hashtag.key}")
     private String hashtagRequestQueueKey;
 
+    @Value("${rabbitmq.queue.request.document}")
+    private String documentRequestQueue;
+
+    @Value("${rabbitmq.queue.request.document.key}")
+    private String documentRequestQueueKey;
+
 
     public String getHost() {
         return host;
@@ -70,5 +76,13 @@ public class RabbitMQProperties {
 
     public String getHashtagRequestQueueKey() {
         return hashtagRequestQueueKey;
+    }
+
+    public String getDocumentRequestQueue() {
+        return documentRequestQueue;
+    }
+
+    public String getDocumentRequestQueueKey() {
+        return documentRequestQueueKey;
     }
 }
