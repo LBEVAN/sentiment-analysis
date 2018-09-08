@@ -65,7 +65,7 @@
         </div>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item sentence" v-for="(sentence, sentenceIndex) in result.sentences" :id="getIdWithIndex('', 'sentence', sentenceIndex)">
+        <li class="list-group-item sentence" v-for="(sentence, sentenceIndex) in result.sentences" :id="getIdWithIndex(getIdWithIndex('', 'result', resultIndex), 'sentence', sentenceIndex)">
           <div class="row">
             <div class="col">
               <p>{{ sentence.text }}</p>
@@ -80,14 +80,14 @@
             </div>
           </div>
           <div class="row float-right">
-            <button class="btn btn-primary btn-sm" data-toggle="collapse" :data-target="getIdWithIndex('#', 'collapse-sentence', sentenceIndex)" aria-expanded="true"
-              :aria-controls="getIdWithIndex('', 'collapse-sentence', sentenceIndex)">
+            <button class="btn btn-primary btn-sm" data-toggle="collapse" :data-target="getIdWithIndex(getIdWithIndex('#', 'result', resultIndex), 'collapse-sentence', sentenceIndex)" aria-expanded="true"
+              :aria-controls="getIdWithIndex(getIdWithIndex('', 'result', resultIndex), 'collapse-sentence', sentenceIndex)">
               View Distribution
             </button>
           </div>
-          <div :id="getIdWithIndex('', 'collapse-sentence', sentenceIndex)" class="row collapse collapsed" :data-parent="getIdWithIndex('#', 'result', resultIndex)">
+          <div :id="getIdWithIndex(getIdWithIndex('', 'result', resultIndex), 'collapse-sentence', sentenceIndex)" class="row collapse collapsed" :data-parent="getIdWithIndex('#', 'result', resultIndex)">
             <div class="col">
-              <sentiment-distribution-chart :id="getIdWithIndex('', 'pie', sentenceIndex)" :values="sentence.sentimentDistribution"/>
+              <sentiment-distribution-chart :id="getIdWithIndex(getIdWithIndex('', 'result', resultIndex), 'pie', sentenceIndex)" :values="sentence.sentimentDistribution"/>
             </div>
           </div>
         </li>
