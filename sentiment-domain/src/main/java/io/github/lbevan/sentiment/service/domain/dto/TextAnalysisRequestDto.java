@@ -4,13 +4,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * An {@link AnalysisRequest} implementation for text.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TextAnalysisRequestDto implements AnalysisRequest {
 
+    @NotNull
+    @Size(min = 1)
     private String text;
+
     private String requestId;
 
     /**

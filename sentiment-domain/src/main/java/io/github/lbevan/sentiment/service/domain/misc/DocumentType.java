@@ -17,6 +17,15 @@ public enum DocumentType {
     }
 
     /**
+     * Retrieve the content type.
+     *
+     * @return String content type
+     */
+    public String getContentType() {
+        return contentType;
+    }
+
+    /**
      * Get the DocumentType based on the supplied content type.
      *
      * @param contentType type of content

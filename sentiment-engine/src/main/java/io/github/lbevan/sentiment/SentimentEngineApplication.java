@@ -13,17 +13,4 @@ public class SentimentEngineApplication {
     public static void main(String[] args) {
         SpringApplication.run(SentimentEngineApplication.class, args);
     }
-
-//    @Autowired
-//    private TwitterService twitterService;
-//
-//    public static void main(String[] args) {
-//        SpringApplication.run(SentimentEngineApplication.class, args);
-//    }
-//
-//    @Override
-//    public void run(String... args) {
-//        Tweet tweet = twitterService.getTweetById("1017825387785719808");
-//        System.out.println(new AnalysisEngine().calculateSentiment(tweet.getText()).getSentiment());
-//    }
 }

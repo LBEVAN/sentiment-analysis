@@ -2,9 +2,11 @@ package io.github.lbevan.twitter.service.impl;
 
 import io.github.lbevan.twitter.service.domain.Tweet;
 import io.github.lbevan.twitter.service.domain.TwitterSearchResult;
+import io.github.lbevan.twitter.service.exception.TwitterServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.UnsupportedEncodingException;
@@ -30,9 +32,12 @@ public class TwitterService {
      * @param id
      * @return Tweet
      */
-    public Tweet getTweetById(final String id) {
-        Tweet tweet = twitterRestTemplate.getForObject(BASE_API + "statuses/show.json?id=" + id + "&tweet_mode=extended", Tweet.class);
-        return tweet;
+    public Tweet getTweetById(final String id) throws TwitterServiceException {
+        try {
+            return twitterRestTemplate.getForObject(BASE_API + "statuses/show.json?id=" + id + "&tweet_mode=extended", Tweet.class);
+        } catch(RestClientException e) {
+            throw new TwitterServiceException("Exception retrieving Tweet with id of {" + id + " }", e);
+        }
     }
 
     /**

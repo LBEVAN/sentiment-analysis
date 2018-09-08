@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import io.github.lbevan.rabbitmq.service.impl.RabbitMQService;
 import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
 import io.github.lbevan.sentiment.repository.impl.DocumentRepository;
+import io.github.lbevan.sentiment.service.Util.DocumentValidator;
 import io.github.lbevan.sentiment.service.Util.UUIDGenerator;
 import io.github.lbevan.sentiment.service.domain.AnalysisType;
 import io.github.lbevan.sentiment.service.domain.dto.*;
@@ -19,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.UUID;
@@ -75,7 +77,7 @@ public class AnalysisRequestController {
     @PostMapping(value = "/text", headers = { "accept=application/json", "content-type=application/json" })
     @Transactional
     public ResponseEntity<AnalysisRequestResponseDto> createTextAnalysisRequest(
-            @RequestBody TextAnalysisRequestDto request) {
+            @RequestBody @Valid TextAnalysisRequestDto request) {
         UUID requestId = UUIDGenerator.generateUUID();
 
         request.setRequestId(requestId.toString());
@@ -102,7 +104,7 @@ public class AnalysisRequestController {
     @PostMapping(value = "/tweet", headers = { "accept=application/json", "content-type=application/json" })
     @Transactional
     public ResponseEntity<AnalysisRequestResponseDto> createTweetAnalysisRequest(
-            @RequestBody TweetAnalysisRequestDto request) {
+            @RequestBody @Valid TweetAnalysisRequestDto request) {
         UUID requestId = UUIDGenerator.generateUUID();
 
         request.setRequestId(requestId.toString());
@@ -129,7 +131,7 @@ public class AnalysisRequestController {
     @PostMapping(value = "/hashtag", headers = { "accept=application/json", "content-type=application/json" })
     @Transactional
     public ResponseEntity<AnalysisRequestResponseDto> createHashtagAnalysisRequest(
-            @RequestBody HashtagAnalysisRequestDto request) {
+            @RequestBody @Valid HashtagAnalysisRequestDto request) {
         UUID requestId = UUIDGenerator.generateUUID();
 
         request.setRequestId(requestId.toString());
@@ -155,7 +157,13 @@ public class AnalysisRequestController {
      */
     @PostMapping(value = "/document", headers = { "accept=application/json", "content-type=multipart/form-data" })
     @Transactional
-    public ResponseEntity<AnalysisRequestResponseDto> createHashtagAnalysisRequest(@RequestParam("document") MultipartFile document) throws IOException {
+    public ResponseEntity<AnalysisRequestResponseDto> createDocumentAnalysisRequest(
+            @RequestParam("document") MultipartFile document) throws IOException {
+
+        if(document.isEmpty() || !DocumentValidator.isDocumentOfAcceptedContentType(document)) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
         UUID requestId = UUIDGenerator.generateUUID();
 
         String documentId = documentRepository.save(document.getInputStream(), document.getOriginalFilename(), document.getContentType());

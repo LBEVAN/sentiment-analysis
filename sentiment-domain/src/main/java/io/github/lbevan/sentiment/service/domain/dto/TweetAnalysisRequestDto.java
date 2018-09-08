@@ -3,14 +3,26 @@ package io.github.lbevan.sentiment.service.domain.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.github.lbevan.sentiment.service.domain.validation.BasicValidation;
+import io.github.lbevan.sentiment.service.domain.validation.ExtensiveValidation;
+import io.github.lbevan.sentiment.service.domain.validation.tweet.TweetLink;
+
+import javax.validation.GroupSequence;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * An {@link AnalysisRequest} implementation for a single tweet.
  */
+@GroupSequence({ BasicValidation.class, ExtensiveValidation.class, TweetAnalysisRequestDto.class })
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TweetAnalysisRequestDto implements AnalysisRequest {
 
+    @NotNull(groups = BasicValidation.class)
+    @Size(min = 1, groups = BasicValidation.class)
+    @TweetLink(groups = ExtensiveValidation.class)
     private String tweetLink;
+
     private String requestId;
 
     /**

@@ -16,6 +16,14 @@
     </parent>
 
     <dependencies>
+        <!-- 1st Party Dependencies -->
+        <dependency>
+            <groupId>io.github.lbevan</groupId>
+            <artifactId>twitter-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- End 1st Party Dependencies -->
+
         <!-- Spring Dependencies -->
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -35,6 +43,15 @@
             <version>1.9.13</version>
         </dependency>
         <!-- End Json Dependencies -->
+
+        <!-- Util Dependencies -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.12.Final</version>
+        </dependency>
+
+        <!-- End Util Dependencies -->
     </dependencies>
 
     <build>
