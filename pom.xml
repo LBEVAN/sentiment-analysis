@@ -33,6 +33,7 @@
         <module>rabbitmq-spring-boot-autoconfigure</module>
         <module>rabbitmq-spring-boot-starter</module>
         <module>sentiment-engine</module>
+        <module>sentiment-service</module>
         <module>sentiment-web</module>
     </modules>
 

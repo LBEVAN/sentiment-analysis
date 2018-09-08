@@ -4,6 +4,7 @@ import io.github.lbevan.sentiment.pipeline.Payload;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
 import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.twitter.service.domain.Tweet;
+import io.github.lbevan.twitter.service.exception.TwitterServiceException;
 import io.github.lbevan.twitter.service.impl.TwitterService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,7 +36,7 @@ public class TestTweetPipelineAdapter {
     private SpringBeanUtil springBeanUtil;
 
     @BeforeEach
-    private void setUp() {
+    private void setUp() throws TwitterServiceException {
         MockitoAnnotations.initMocks(this);
         Mockito.when(context.getBean(TwitterService.class)).thenReturn(twitterService);
         Mockito.when(twitterService.getTweetById("1017825387785719808"))

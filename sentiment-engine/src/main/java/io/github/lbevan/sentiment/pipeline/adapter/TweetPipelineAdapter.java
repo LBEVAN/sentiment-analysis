@@ -4,6 +4,7 @@ import io.github.lbevan.sentiment.pipeline.Payload;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
 import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.twitter.service.domain.Tweet;
+import io.github.lbevan.twitter.service.exception.TwitterServiceException;
 import io.github.lbevan.twitter.service.impl.TwitterService;
 
 import java.util.LinkedList;
@@ -32,7 +33,12 @@ public class TweetPipelineAdapter implements PipelineAdapter {
     @Override
     public Payload adapt() {
         final String tweetId = getTweetIdFromLink(request.getTweetLink());
-        Tweet tweet = twitterService.getTweetById(tweetId);
+        Tweet tweet = null;
+        try {
+            tweet = twitterService.getTweetById(tweetId);
+        } catch (TwitterServiceException e) {
+            e.printStackTrace();
+        }
 
         LinkedList<String> payloadData = new LinkedList<>();
         payloadData.add(tweet.getText());
