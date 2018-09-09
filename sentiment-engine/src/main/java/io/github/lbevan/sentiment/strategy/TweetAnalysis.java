@@ -3,6 +3,8 @@ package io.github.lbevan.sentiment.strategy;
 import io.github.lbevan.sentiment.pipeline.Pipeline;
 import io.github.lbevan.sentiment.pipeline.adapter.TweetPipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.AnalysisPipe;
+import io.github.lbevan.sentiment.pipeline.pipe.RemoveHashtagPipe;
+import io.github.lbevan.sentiment.pipeline.pipe.RemoveRetweetPipe;
 import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
 import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
@@ -49,9 +51,11 @@ public class TweetAnalysis implements AnalysisRequestListener<TweetAnalysisReque
 
         List<AnalysisResult> results = null;
         try {
-             results = new Pipeline.PipelineBuilder()
+            results = new Pipeline.PipelineBuilder()
                     .adapt(new TweetPipelineAdapter(request))
                     .pipe(new AnalysisPipe())
+                    .pipe(new RemoveRetweetPipe())
+                    .pipe(new RemoveHashtagPipe())
                     .build()
                     .process();
         } catch (AnalysisRequestException e) {
