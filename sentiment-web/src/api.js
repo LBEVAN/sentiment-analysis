@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const client = axios.create({
-  baseURL: 'http://localhost:9200/api',
+  baseURL: process.env.VUE_APP_API,
   json: true,
   headers: {
     "Access-Control-Allow-Origin": "*"

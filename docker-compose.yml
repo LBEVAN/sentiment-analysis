@@ -24,6 +24,58 @@ services:
         aliases:
           - "rabbitmq"
 
+  sentiment-web:
+    image: sentiment-web
+    container_name: sentiment-web
+    build: ./sentiment-web
+    ports:
+      - 9100:80
+    depends_on:
+      - sentiment-service
+    networks:
+      sentiment-network:
+        aliases:
+          - "sentiment-web"
+
+  sentiment-service:
+    image: sentiment-service
+    container_name: sentiment-service
+    build: ./sentiment-service
+    ports:
+      - 9200:9200
+    environment:
+      - repository.host=sentiment-database
+      - repository.port=27017
+      - rabbitmq.host=rabbitmq
+      - rabbitmq.port=5672
+    depends_on:
+      - sentiment-database
+      - rabbitmq
+    networks:
+      sentiment-network:
+        aliases:
+          - "sentiment-service"
+
+  sentiment-engine:
+    image: sentiment-engine
+    container_name: sentiment-engine
+    build: ./sentiment-engine
+    ports:
+      - 9300:9300
+    environment:
+      - repository.host=sentiment-database
+      - repository.port=27017
+      - rabbitmq.host=rabbitmq
+      - rabbitmq.port=5672
+    depends_on:
+      - sentiment-database
+      - rabbitmq
+      - sentiment-service
+    networks:
+      sentiment-network:
+        aliases:
+          - "sentiment-engine"
+
 networks:
   sentiment-network:
     driver: bridge

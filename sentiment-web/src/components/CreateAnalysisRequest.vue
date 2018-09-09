@@ -59,6 +59,9 @@ export default {
       componentsArray: ['text-input', 'tweet-input', 'hashtag-input', 'document-input']
     }
   },
+  mounted () {
+    console.log(process.env.VUE_APP_API);
+  },
   methods: {
     onOptionChosen: function (value) {
       this.chosenOption = value
