@@ -1,4 +1,4 @@
-package io.github.lbevan.sentiment.util.document;
+package io.github.lbevan.sentiment.repository.document.conversion;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.ByteSource;

@@ -5,6 +5,9 @@ import com.mongodb.client.gridfs.GridFSBucket;
 import com.mongodb.client.gridfs.GridFSDownloadStream;
 import com.mongodb.client.gridfs.model.GridFSFile;
 import com.mongodb.gridfs.GridFSDBFile;
+import io.github.lbevan.sentiment.repository.document.conversion.DocumentConversionStrategy;
+import io.github.lbevan.sentiment.repository.document.conversion.DocumentConversionStrategyFactory;
+import io.github.lbevan.sentiment.service.domain.misc.DocumentType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -53,5 +56,14 @@ public class DocumentRepository {
         // download it from the store
         GridFSDownloadStream downloadStream = gridFSBucket.openDownloadStream(file.getObjectId());
         return new GridFsResource(file, downloadStream);
+    }
+
+    /**
+     * Get the conversion strategy for the particular document.
+     *
+     * @return DocumentConversionStrategy
+     */
+    public DocumentConversionStrategy getDocumentConversionStrategyForDocument(DocumentType documentType) {
+        return DocumentConversionStrategyFactory.getConversionStrategy(documentType);
     }
 }

@@ -2,13 +2,11 @@ package io.github.lbevan.sentiment.strategy;
 
 import io.github.lbevan.sentiment.pipeline.Pipeline;
 import io.github.lbevan.sentiment.pipeline.adapter.DocumentPipelineAdapter;
-import io.github.lbevan.sentiment.pipeline.adapter.TextPipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.AnalysisPipe;
 import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
 import io.github.lbevan.sentiment.repository.impl.DocumentRepository;
 import io.github.lbevan.sentiment.service.domain.dto.DocumentAnalysisRequestDto;
-import io.github.lbevan.sentiment.service.domain.dto.TextAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisRequestEntity;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.service.domain.misc.RequestStatus;

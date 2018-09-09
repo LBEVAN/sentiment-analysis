@@ -1,4 +1,4 @@
-package io.github.lbevan.sentiment.util.document;
+package io.github.lbevan.sentiment.repository.document.conversion;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;

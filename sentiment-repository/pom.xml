@@ -37,6 +37,11 @@
             <artifactId>guava</artifactId>
             <version>26.0-jre</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+        </dependency>
         <!-- End Util Dependenies -->
     </dependencies>
 

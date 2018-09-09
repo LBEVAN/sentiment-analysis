@@ -29,7 +29,7 @@ public class HashtagAnalysis implements AnalysisRequestListener<HashtagAnalysisR
 
     @Autowired
     public HashtagAnalysis(AnalysisRequestRepository analysisRequestRepository,
-                         AnalysisResultRepository analysisResultRepository) {
+                           AnalysisResultRepository analysisResultRepository) {
         this.analysisRequestRepository = analysisRequestRepository;
         this.analysisResultRepository = analysisResultRepository;
     }

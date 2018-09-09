@@ -53,6 +53,4 @@ public class TestTweetPipelineAdapter {
 
         assertEquals(1, payload.getInput().size());
     }
-
-    // todo: add tests around validation?
 }

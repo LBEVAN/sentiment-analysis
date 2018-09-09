@@ -1,4 +1,4 @@
-package io.github.lbevan.sentiment.util.document;
+package io.github.lbevan.sentiment.repository.document.conversion;
 
 /**
  * Custom exception for document conversions.

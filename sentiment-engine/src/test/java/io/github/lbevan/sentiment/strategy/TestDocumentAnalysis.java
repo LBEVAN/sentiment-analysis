@@ -1,15 +1,17 @@
 package io.github.lbevan.sentiment.strategy;
 
+import io.github.lbevan.sentiment.repository.document.conversion.DocumentConversionException;
+import io.github.lbevan.sentiment.repository.document.conversion.DocumentConversionStrategy;
+import io.github.lbevan.sentiment.repository.document.conversion.TxtConversionStrategy;
 import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
-import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
+import io.github.lbevan.sentiment.repository.impl.DocumentRepository;
+import io.github.lbevan.sentiment.service.SpringBeanUtil;
+import io.github.lbevan.sentiment.service.domain.dto.DocumentAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisRequestEntity;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
-import io.github.lbevan.sentiment.service.domain.result.Sentiment;
-import io.github.lbevan.sentiment.service.SpringBeanUtil;
-import io.github.lbevan.twitter.service.domain.Tweet;
+import io.github.lbevan.sentiment.service.domain.misc.DocumentType;
 import io.github.lbevan.twitter.service.exception.TwitterServiceException;
-import io.github.lbevan.twitter.service.impl.TwitterService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,30 +22,25 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationContext;
+import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
- * Test class for {@link TweetAnalysis}.
+ * Test class for {@link DocumentAnalysis}.
  */
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = { SpringBeanUtil.class })
-public class TestTweetAnalysis {
+public class TestDocumentAnalysis {
 
     @Mock
     private ApplicationContext context;
-
-    @Mock
-    private TwitterService twitterService;
 
     @Autowired
     private SpringBeanUtil springBeanUtil;
@@ -54,30 +51,40 @@ public class TestTweetAnalysis {
     @MockBean
     private AnalysisResultRepository analysisResultRepository;
 
+    @MockBean
+    private DocumentRepository documentRepository;
+
     @BeforeEach
     private void setUp() throws TwitterServiceException {
         MockitoAnnotations.initMocks(this);
-        Mockito.when(context.getBean(TwitterService.class)).thenReturn(twitterService);
-        Mockito.when(twitterService.getTweetById("1017825387785719808"))
-                .thenReturn(new Tweet(new Long(000001), "I love Monday mornings!"));
+        Mockito.when(context.getBean(DocumentRepository.class)).thenReturn(documentRepository);
+        Mockito.when(documentRepository.findById("1097213231"))
+                .thenReturn(mock(GridFsResource.class));
         springBeanUtil.setApplicationContext(context);
     }
 
     @Test
-    public void whenRequestReceived_thenRequestIsProcessedAndResultIsReturned() {
+    public void whenTxtDocumentRequestReceived_thenRequestIsProcessedAndResultIsReturned() throws DocumentConversionException {
+        DocumentConversionStrategy documentConversionStrategy = mock(TxtConversionStrategy.class);
+        when(documentConversionStrategy.convert(any())).thenReturn("My document contents.");
         when(analysisRequestRepository.findByRequestId(any()))
                 .thenReturn(mock(AnalysisRequestEntity.class));
         when(analysisRequestRepository.save(any()))
                 .thenReturn(mock(AnalysisRequestEntity.class));
+        when(documentRepository.getDocumentConversionStrategyForDocument(any()))
+                .thenReturn(documentConversionStrategy);
 
-        TweetAnalysisRequestDto request = new TweetAnalysisRequestDto("1017825387785719808");
+        DocumentAnalysisRequestDto request
+                = new DocumentAnalysisRequestDto("E876s-EWAsdabsa", "1097213231", DocumentType.TXT);
 
-        new TweetAnalysis(analysisRequestRepository, analysisResultRepository).receiveRequest(request);
+        new DocumentAnalysis(analysisRequestRepository, analysisResultRepository, documentRepository)
+                .receiveRequest(request);
 
         ArgumentCaptor<List<AnalysisResult>> captor = ArgumentCaptor.forClass(List.class);
-        verify(analysisResultRepository).saveAll(captor.capture());
+        verify(analysisRequestRepository, times(2)).save(any(AnalysisRequestEntity.class));
+        verify(analysisResultRepository, times(1)).saveAll(captor.capture());
+        verify(documentConversionStrategy, times(1)).convert(any(GridFsResource.class));
 
         assertEquals(1, captor.getValue().size());
-        assertTrue(captor.getValue().get(0).getSentiment().equals(Sentiment.POSITIVE.getDescription()));
     }
 }
