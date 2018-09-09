@@ -20,7 +20,7 @@ export default {
   margin-top: 60px;
 }
 
-.wrapper {
+.wrapper-40 {
   margin: auto;
   width: 40%;
   align-items: center;

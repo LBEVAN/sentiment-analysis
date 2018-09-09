@@ -1,10 +1,15 @@
 <template>
-  <div class="wrapper-65">
+  <div class="wrapper-50">
     <h1 class="display-2">SentoNal</h1>
     <h3 class="display-5">The Sentiment Analysis Webapp</h3>
 
     <div class="row">
+      <div class="col">
+        <search-for-request/>
+      </div>
+    </div>
 
+    <div class="row">
       <div class="col">
         <div class="card mt-4 text-center">
           <h4 class="card-header">Request Analysis</h4>
@@ -19,10 +24,6 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="col">
-        <search-for-request/>
       </div>
     </div>
   </div>
