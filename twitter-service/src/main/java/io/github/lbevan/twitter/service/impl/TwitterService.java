@@ -6,12 +6,9 @@ import io.github.lbevan.twitter.service.exception.TwitterServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,7 +32,7 @@ public class TwitterService {
     public Tweet getTweetById(final String id) throws TwitterServiceException {
         try {
             return twitterRestTemplate.getForObject(BASE_API + "statuses/show.json?id=" + id + "&tweet_mode=extended", Tweet.class);
-        } catch(RestClientException e) {
+        } catch(Exception e) {
             throw new TwitterServiceException("Exception retrieving Tweet with id of {" + id + " }", e);
         }
     }
@@ -46,19 +43,18 @@ public class TwitterService {
      * @param hashtag hashtag to search for
      * @return List<Tweet>
      */
-    public List<Tweet> getTweetsByHashtag(final String hashtag) {
-        // encode the parameters
-        String queryParams = null;
+    public List<Tweet> getTweetsByHashtag(final String hashtag) throws TwitterServiceException {
         try {
-            queryParams = URLEncoder.encode(hashtag, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+            // encode the parameters
+            String queryParams = URLEncoder.encode(hashtag, "UTF-8");
 
-        // do the search - attempts to filter out retweets and replies to get to the real tweets!
-        TwitterSearchResult searchResult = twitterRestTemplate.getForObject(
-                BASE_API + "search/tweets.json?q=" + queryParams + " -filter:retweets -filter:nativeretweets -filter:replies&lang=en&result_type=recent&tweet_mode=extended", TwitterSearchResult.class);
-        List<Tweet> foundTweets = searchResult.getTweets();
-        return foundTweets;
+            // do the search - attempts to filter out retweets and replies to get to the real tweets!
+            TwitterSearchResult searchResult = twitterRestTemplate.getForObject(
+                    BASE_API + "search/tweets.json?q=" + queryParams + " -filter:retweets -filter:nativeretweets -filter:replies&lang=en&result_type=recent&tweet_mode=extended", TwitterSearchResult.class);
+            List<Tweet> foundTweets = searchResult.getTweets();
+            return foundTweets;
+        } catch (Exception e) {
+            throw new TwitterServiceException("Exception caught attempting to retrieve tweets", e);
+        }
     }
 }

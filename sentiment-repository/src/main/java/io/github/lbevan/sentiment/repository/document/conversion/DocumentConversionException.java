@@ -1,9 +1,11 @@
 package io.github.lbevan.sentiment.repository.document.conversion;
 
+import io.github.lbevan.sentiment.service.domain.exception.AnalysisRequestException;
+
 /**
  * Custom exception for document conversions.
  */
-public class DocumentConversionException extends Exception {
+public class DocumentConversionException extends AnalysisRequestException {
 
     /**
      * Constructor.

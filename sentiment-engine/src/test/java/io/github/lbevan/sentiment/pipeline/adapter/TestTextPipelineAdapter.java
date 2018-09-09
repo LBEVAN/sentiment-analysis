@@ -20,6 +20,4 @@ public class TestTextPipelineAdapter {
 
         assertEquals(1, payload.getInput().size());
     }
-
-    // todo: add tests around validation?
 }

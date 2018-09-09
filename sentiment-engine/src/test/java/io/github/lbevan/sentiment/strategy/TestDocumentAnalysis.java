@@ -11,6 +11,7 @@ import io.github.lbevan.sentiment.service.domain.dto.DocumentAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisRequestEntity;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.service.domain.misc.DocumentType;
+import io.github.lbevan.sentiment.service.domain.misc.RequestStatus;
 import io.github.lbevan.twitter.service.exception.TwitterServiceException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -61,16 +62,16 @@ public class TestDocumentAnalysis {
         Mockito.when(documentRepository.findById("1097213231"))
                 .thenReturn(mock(GridFsResource.class));
         springBeanUtil.setApplicationContext(context);
+        when(analysisRequestRepository.findByRequestId(any()))
+                .thenReturn(mock(AnalysisRequestEntity.class));
+        when(analysisRequestRepository.save(any()))
+                .thenReturn(mock(AnalysisRequestEntity.class));
     }
 
     @Test
     public void whenTxtDocumentRequestReceived_thenRequestIsProcessedAndResultIsReturned() throws DocumentConversionException {
         DocumentConversionStrategy documentConversionStrategy = mock(TxtConversionStrategy.class);
         when(documentConversionStrategy.convert(any())).thenReturn("My document contents.");
-        when(analysisRequestRepository.findByRequestId(any()))
-                .thenReturn(mock(AnalysisRequestEntity.class));
-        when(analysisRequestRepository.save(any()))
-                .thenReturn(mock(AnalysisRequestEntity.class));
         when(documentRepository.getDocumentConversionStrategyForDocument(any()))
                 .thenReturn(documentConversionStrategy);
 
@@ -86,5 +87,23 @@ public class TestDocumentAnalysis {
         verify(documentConversionStrategy, times(1)).convert(any(GridFsResource.class));
 
         assertEquals(1, captor.getValue().size());
+    }
+
+    @Test
+    public void whenExceptionThrown_thenRequestSetToFailed() throws DocumentConversionException {
+        DocumentConversionStrategy documentConversionStrategy = mock(TxtConversionStrategy.class);
+        when(documentConversionStrategy.convert(any())).thenThrow(mock(DocumentConversionException.class));
+        when(documentRepository.getDocumentConversionStrategyForDocument(any()))
+                .thenReturn(documentConversionStrategy);
+
+        DocumentAnalysisRequestDto request
+                = new DocumentAnalysisRequestDto("E876s-EWAsdabsa", "1097213231", DocumentType.TXT);
+
+        new DocumentAnalysis(analysisRequestRepository, analysisResultRepository, documentRepository)
+                .receiveRequest(request);
+
+        ArgumentCaptor<AnalysisRequestEntity> captor = ArgumentCaptor.forClass(AnalysisRequestEntity.class);
+        verify(analysisRequestRepository, times(2)).save(captor.capture());
+        verify(captor.getAllValues().get(1)).setStatus(RequestStatus.FAILED);
     }
 }

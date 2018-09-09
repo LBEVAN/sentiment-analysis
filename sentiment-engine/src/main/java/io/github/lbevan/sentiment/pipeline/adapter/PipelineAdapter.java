@@ -1,6 +1,7 @@
 package io.github.lbevan.sentiment.pipeline.adapter;
 
 import io.github.lbevan.sentiment.pipeline.Payload;
+import io.github.lbevan.sentiment.service.domain.exception.AnalysisRequestException;
 
 /**
  * Marker interface for pipeline adapters.
@@ -12,5 +13,5 @@ public interface PipelineAdapter {
      *
      * @return Payload
      */
-    Payload adapt();
+    Payload adapt() throws AnalysisRequestException;
 }

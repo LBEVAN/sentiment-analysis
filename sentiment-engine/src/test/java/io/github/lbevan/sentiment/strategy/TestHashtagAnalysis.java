@@ -1,11 +1,13 @@
 package io.github.lbevan.sentiment.strategy;
 
+import io.github.lbevan.sentiment.repository.document.conversion.DocumentConversionException;
 import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
 import io.github.lbevan.sentiment.service.SpringBeanUtil;
 import io.github.lbevan.sentiment.service.domain.dto.HashtagAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisRequestEntity;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.misc.RequestStatus;
 import io.github.lbevan.twitter.service.domain.Tweet;
 import io.github.lbevan.twitter.service.exception.TwitterServiceException;
 import io.github.lbevan.twitter.service.impl.TwitterService;
@@ -28,6 +30,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
 /**
  * Test class for {@link HashtagAnalysis}.
@@ -54,26 +57,20 @@ public class TestHashtagAnalysis {
     @BeforeEach
     private void setUp() throws TwitterServiceException {
         MockitoAnnotations.initMocks(this);
-        Mockito.when(context.getBean(TwitterService.class)).thenReturn(twitterService);
-        List<Tweet> tweets = new ArrayList<>();
-        tweets.add(new Tweet(new Long(000001), "I love Monday mornings!"));
-        tweets.add(new Tweet(new Long(000002), "One day I will be a mushroom"));
-        tweets.add(new Tweet(new Long(000003), "The sun hurts my eyes"));
-        tweets.add(new Tweet(new Long(000004), "I wish I could og to space"));
-        tweets.add(new Tweet(new Long(000005), "Rain is not fun."));
-        tweets.add(new Tweet(new Long(000006), "Tuesdays are cool."));
-        tweets.add(new Tweet(new Long(000007), "Turtles are cute."));
-        Mockito.when(twitterService.getTweetsByHashtag("#example"))
-                .thenReturn(tweets);
-        springBeanUtil.setApplicationContext(context);
-    }
+        when(context.getBean(TwitterService.class)).thenReturn(twitterService);
 
-    @Test
-    public void whenRequestReceived_thenRequestIsProcessedAndResultIsReturned() {
+        springBeanUtil.setApplicationContext(context);
+
         when(analysisRequestRepository.findByRequestId(any()))
                 .thenReturn(mock(AnalysisRequestEntity.class));
         when(analysisRequestRepository.save(any()))
                 .thenReturn(mock(AnalysisRequestEntity.class));
+    }
+
+    @Test
+    public void whenRequestReceived_thenRequestIsProcessedAndResultIsReturned() throws TwitterServiceException {
+        when(twitterService.getTweetsByHashtag("#example"))
+                .thenReturn(getExampleListOfTweets());
 
         HashtagAnalysisRequestDto request = new HashtagAnalysisRequestDto("#example");
 
@@ -85,5 +82,32 @@ public class TestHashtagAnalysis {
         verify(analysisResultRepository, times(1)).saveAll(captor.capture());
 
         assertEquals(7, captor.getValue().size());
+    }
+
+    @Test
+    public void whenExceptionThrown_thenRequestSetToFailed() throws TwitterServiceException {
+        when(twitterService.getTweetsByHashtag("#example"))
+                .thenThrow(mock(TwitterServiceException.class));
+
+        HashtagAnalysisRequestDto request = new HashtagAnalysisRequestDto("#example");
+
+        new HashtagAnalysis(analysisRequestRepository, analysisResultRepository)
+                .receiveRequest(request);
+
+        ArgumentCaptor<AnalysisRequestEntity> captor = ArgumentCaptor.forClass(AnalysisRequestEntity.class);
+        verify(analysisRequestRepository, times(2)).save(captor.capture());
+        verify(captor.getAllValues().get(1)).setStatus(RequestStatus.FAILED);
+    }
+
+    private List<Tweet> getExampleListOfTweets() {
+        List<Tweet> tweets = new ArrayList<>();
+        tweets.add(new Tweet(new Long(000001), "I love Monday mornings!"));
+        tweets.add(new Tweet(new Long(000002), "One day I will be a mushroom"));
+        tweets.add(new Tweet(new Long(000003), "The sun hurts my eyes"));
+        tweets.add(new Tweet(new Long(000004), "I wish I could og to space"));
+        tweets.add(new Tweet(new Long(000005), "Rain is not fun."));
+        tweets.add(new Tweet(new Long(000006), "Tuesdays are cool."));
+        tweets.add(new Tweet(new Long(000007), "Turtles are cute."));
+        return tweets;
     }
 }

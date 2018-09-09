@@ -2,14 +2,13 @@ package io.github.lbevan.sentiment.strategy;
 
 import io.github.lbevan.sentiment.pipeline.Pipeline;
 import io.github.lbevan.sentiment.pipeline.adapter.HashtagPipelineAdapter;
-import io.github.lbevan.sentiment.pipeline.adapter.TweetPipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.AnalysisPipe;
 import io.github.lbevan.sentiment.repository.impl.AnalysisRequestRepository;
 import io.github.lbevan.sentiment.repository.impl.AnalysisResultRepository;
 import io.github.lbevan.sentiment.service.domain.dto.HashtagAnalysisRequestDto;
-import io.github.lbevan.sentiment.service.domain.dto.TweetAnalysisRequestDto;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisRequestEntity;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
+import io.github.lbevan.sentiment.service.domain.exception.AnalysisRequestException;
 import io.github.lbevan.sentiment.service.domain.misc.RequestStatus;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,11 +47,19 @@ public class HashtagAnalysis implements AnalysisRequestListener<HashtagAnalysisR
         entity.setStatus(RequestStatus.IN_PROGRESS);
         entity = analysisRequestRepository.save(entity);
 
-        List<AnalysisResult> results = new Pipeline.PipelineBuilder()
-                .adapt(new HashtagPipelineAdapter(request))
-                .pipe(new AnalysisPipe())
-                .build()
-                .process();
+        List<AnalysisResult> results = null;
+        try {
+            results = new Pipeline.PipelineBuilder()
+                    .adapt(new HashtagPipelineAdapter(request))
+                    .pipe(new AnalysisPipe())
+                    .build()
+                    .process();
+        } catch (AnalysisRequestException e) {
+            // analysis has failed, so set the status to failed
+            entity.setStatus(RequestStatus.FAILED);
+            analysisRequestRepository.save(entity);
+            return;
+        }
 
         // save the results and update the entity status to complete
         analysisResultRepository.saveAll(results);

@@ -3,6 +3,7 @@ package io.github.lbevan.sentiment.pipeline;
 import io.github.lbevan.sentiment.service.domain.entity.AnalysisResult;
 import io.github.lbevan.sentiment.pipeline.adapter.PipelineAdapter;
 import io.github.lbevan.sentiment.pipeline.pipe.Pipe;
+import io.github.lbevan.sentiment.service.domain.exception.AnalysisRequestException;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -27,7 +28,7 @@ public final class Pipeline {
      *
      * @return List of analysis results
      */
-    public List<AnalysisResult> process() {
+    public List<AnalysisResult> process() throws AnalysisRequestException {
         Payload payload = pipelineAdapter.adapt();
 
         for(Pipe pipe : queue) {
