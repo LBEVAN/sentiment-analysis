@@ -6,6 +6,9 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Pipe implementation for removing '#example' elements from inputs.
+ */
 public class RemoveHashtagPipe implements Pipe {
 
     /**

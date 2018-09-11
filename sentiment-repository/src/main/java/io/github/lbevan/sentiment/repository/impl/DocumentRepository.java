@@ -1,30 +1,35 @@
 package io.github.lbevan.sentiment.repository.impl;
 
-import com.google.common.io.ByteSource;
 import com.mongodb.client.gridfs.GridFSBucket;
 import com.mongodb.client.gridfs.GridFSDownloadStream;
 import com.mongodb.client.gridfs.model.GridFSFile;
-import com.mongodb.gridfs.GridFSDBFile;
 import io.github.lbevan.sentiment.repository.document.conversion.DocumentConversionStrategy;
 import io.github.lbevan.sentiment.repository.document.conversion.DocumentConversionStrategyFactory;
 import io.github.lbevan.sentiment.service.domain.misc.DocumentType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.gridfs.GridFsOperations;
 import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Spring service for manipulating documents in GridFs.
+ */
 @Service
 public class DocumentRepository {
 
     private GridFsTemplate gridFsTemplate;
     private GridFSBucket gridFSBucket;
 
+    /**
+     * Constructor.
+     *
+     * @param gridFsTemplate template
+     * @param gridFSBucket bucket
+     */
     @Autowired
     public DocumentRepository(GridFsTemplate gridFsTemplate, GridFSBucket gridFSBucket) {
         this.gridFsTemplate = gridFsTemplate;

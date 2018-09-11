@@ -18,12 +18,18 @@ public class TxtConversionStrategy implements DocumentConversionStrategy {
     @Override
     public String convert(final GridFsResource resource) throws DocumentConversionException {
         try {
+            // would like to use lambda here but no functional interface
             ByteSource byteSource = new ByteSource() {
+
+                /**
+                 * {@inheritDoc}
+                 */
                 @Override
                 public InputStream openStream() throws IOException {
                     return resource.getInputStream();
                 }
             };
+
             return byteSource.asCharSource(Charsets.UTF_8).read();
         } catch (IOException e) {
            throw new DocumentConversionException("Exception converting a txt document to its String contents.", e);

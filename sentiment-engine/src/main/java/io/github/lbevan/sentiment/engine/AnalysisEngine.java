@@ -66,29 +66,6 @@ public class AnalysisEngine {
         return new AnalysisResult(input, sentences, averageSentiment, averageSentimentScore);
     }
 
-//    /**
-//     * Retrieve the analysed sentences from the annotation.
-//     *
-//     * @param annotation the analysis
-//     * @return List the list of sentences
-//     */
-//    private List<Sentence> getAnalysedSentences(Annotation annotation) {
-//        List<Sentence> sentences = new ArrayList<>();
-//        try {
-//            final ObjectMapper objectMapper = new ObjectMapper();
-//
-//            // get the analysis json
-//            String json = JSONOutputter.jsonPrint(annotation);
-//
-//            // convert the analysis to our domain so we have only the attributes we want
-//            JsonNode sentencesNode = objectMapper.readTree(json).get("sentences");
-//            sentences = objectMapper.readValue(sentencesNode, objectMapper.getTypeFactory().constructCollectionType(List.class, Sentence.class));
-//        } catch (IOException e) {
-//            LOGGER.error("An error occurred analysing the data provided!");
-//        }
-//        return sentences;
-//    }
-
     /**
      * Calculate the average sentiment score given a list of scores.
      *

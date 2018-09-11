@@ -6,6 +6,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.math.BigInteger;
 import java.util.List;
 
+/**
+ * Implicit service for performing MongoDb operations on the {@link AnalysisResult} entity.
+ */
 public interface AnalysisResultRepository extends MongoRepository<AnalysisResult, BigInteger> {
 
     /**

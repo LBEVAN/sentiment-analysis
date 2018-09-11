@@ -2,6 +2,9 @@ package io.github.lbevan.sentiment.repository.document.conversion;
 
 import org.springframework.data.mongodb.gridfs.GridFsResource;
 
+/**
+ * Document conversion strategy marker interface.
+ */
 public interface DocumentConversionStrategy {
 
     /**

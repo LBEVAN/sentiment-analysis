@@ -5,6 +5,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.math.BigInteger;
 
+/**
+ * Implicit service for performing MongoDb operations on the {@link AnalysisRequestEntity} entity.
+ */
 public interface AnalysisRequestRepository extends MongoRepository<AnalysisRequestEntity, BigInteger> {
 
     /**

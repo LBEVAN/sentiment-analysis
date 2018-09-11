@@ -4,6 +4,9 @@ import io.github.lbevan.sentiment.pipeline.Payload;
 
 import java.util.LinkedList;
 
+/**
+ * Pipe implementation for removing the 'RT' from a tweet.
+ */
 public class RemoveRetweetPipe implements Pipe {
 
     /**

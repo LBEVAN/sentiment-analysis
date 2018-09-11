@@ -6,11 +6,18 @@ import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventLis
 import org.springframework.data.mongodb.core.mapping.event.BeforeConvertEvent;
 import org.springframework.util.ReflectionUtils;
 
+/**
+ * MongoDB event listener.
+ * Invoked a callback operation to save the DBref fields.
+ */
 public class CascadeSaveEventListener extends AbstractMongoEventListener<Object> {
 
     @Autowired
     private MongoOperations mongoOperations;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void onBeforeConvert(final BeforeConvertEvent<Object> event) {
         final Object source = event.getSource();
